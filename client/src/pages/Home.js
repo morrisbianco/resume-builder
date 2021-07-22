@@ -1,5 +1,6 @@
 // Node Modules
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
@@ -15,7 +16,7 @@ const Home = () => {
     if (loading) {
       return <h2>Loading...</h2>
     } else {
-      return <UserList users={users} title="List of Users" />
+      return <UserList users={users} title="List of Resumes" />
     }
   } 
 
@@ -36,6 +37,9 @@ const Home = () => {
         <div className="col-12 col-md-8 mb-3">
           {renderUserList()}
         </div>
+        <Link className="btn btn-lg btn-info m-2" to="/Build">
+          Create a Resume
+        </Link>
       </div>
     </main>
   );

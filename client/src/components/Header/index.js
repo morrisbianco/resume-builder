@@ -41,11 +41,11 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Fun User List</h1>
+            <h1 className="m-0">Resume Builder</h1>
           </Link>
         </div>
         <div>
-          <p className="m-0 text-center">Simple App to View Users.</p>
+          <p className="m-0 text-center">Simple App to Build Resumes.</p>
           {renderControls()}
         </div>
       </div>
