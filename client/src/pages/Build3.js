@@ -47,27 +47,27 @@ const Build3 = () => {
           <h3>Work Experience</h3>
           <label className="label">Company:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Company Name" />
+            <input className="input" type="text" name="company" value={form.company} onChange={handleInputChange} placeholder="Company Name" />
           </div>
           <label className="label">Role:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Role in Company" />
+            <input className="input" type="text" name="role" value={form.role} onChange={handleInputChange} placeholder="Role in Company" />
           </div>
           <label className="label">Location:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="City, State Abreviation" />
+            <input className="input" type="text" name="location" value={form.location} onChange={handleInputChange} placeholder="City, State Abreviation" />
           </div>
           <label className="label">Date:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Start - End Year (Present)" />
+            <input className="input" type="text" name="date" value={form.date} onChange={handleInputChange} placeholder="Start - End Year (Present)" />
           </div>
           <label className="label">Description:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Describe..." />
+            <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
           </div>
           <label className="label">Key Achievements:</label>
           <div className="control">
-            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="resume, speaking, writing" />
+            <input className="input" type="text" name="achievemnet" value={form.achievemnet} onChange={handleInputChange} placeholder="resume, speaking, writing" />
           </div>
         </div>
 
