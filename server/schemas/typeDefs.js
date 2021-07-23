@@ -7,6 +7,39 @@ const typeDefs = gql`
     email: String
     password: String
   }
+type Contact {
+  name: String
+  city: String
+  state: String
+  address: String
+  zip: String
+  phoneNumber: String
+  summary: String
+  skills: [String]
+}
+
+type: Projects {
+  title: String
+  link: String
+  bPoints: [String]
+  tools: [String]
+}
+
+type: Experience {
+  title: String
+  role: String
+  date: String
+  location: String
+  description: String
+  keyAchievement: String
+}
+
+type: Education {
+  title: String
+  date: String
+  bPoints: [String]
+  description: String
+}
 
   type Auth {
     token: ID!
