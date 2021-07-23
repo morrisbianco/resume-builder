@@ -1,3 +1,12 @@
+body {
+  transition: 100ms;
+}
+
+.underscore {
+  list-style: square;
+  text-decoration: underline;
+}
+
 .navbar-menu {
   background: -webkit-linear-gradient(to right, #004e92, #000428);
 
@@ -8,6 +17,10 @@
   align-items: center;
 }
 
+.login {
+  background: url(https://images.pexels.com/photos/733852/pexels-photo-733852.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+}
+
 .hero,
 .cta {
   background: #000428;  /* fallback for old browsers */
@@ -16,10 +29,6 @@ background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, F
 
 }
 
-.cta {
-  height: 500px;
-  border-top: 10px solid turquoise;
-}
 
 footer {
   color: white;
@@ -31,7 +40,7 @@ footer strong {
 }
 
 footer a {
-  color: turquoise;
+  color: rgb(36, 78, 156);
 }
 
 .title {
