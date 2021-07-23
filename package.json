@@ -17,6 +17,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "bulma": "^0.9.3",
+    "bulma-start": "0.0.4",
     "graphql": "^15.5.1"
   }
 }
