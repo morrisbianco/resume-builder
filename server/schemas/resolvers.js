@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User, Resume, Education, Experience, Projects } = require('../models');
+const { User, Resume, Education, Experience, Project } = require('../models');
 
 const resolvers = {
   Query: {
@@ -63,7 +63,7 @@ const resolvers = {
       return newEducation;
     },
     createProject: async (_, args) => {
-      const newProject = await Projects.create(args);
+      const newProject = await Project.create(args);
       return newProject;
     },
     addExp: async (_, { expData }, context) => {
