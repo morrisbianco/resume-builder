@@ -47,19 +47,19 @@ const Build2 = () => {
           <h3>Education</h3>
           <label className="label">School:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="School of Resume " />
+            <input className="input" type="text" name="school" value={form.school} onChange={handleInputChange} placeholder="School of Resume " />
           </div>
           <label className="label">Location:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="City, State Abreviation" />
+            <input className="input" type="text" name="location" value={form.location} onChange={handleInputChange} placeholder="City, State Abreviation" />
           </div>
           <label className="label">Completion Date:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Month, Year" />
+            <input className="input" type="text" name="onChange" value={form.date} onChange={handleInputChange} placeholder="Month, Year" />
           </div>
           <label className="label">Description:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Describe..." />
+            <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
           </div>
         </div>
 
