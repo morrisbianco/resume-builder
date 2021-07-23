@@ -42,6 +42,7 @@ type Project {
   tools: [String]
 }
 
+
 input ProjectInput {
   title: String
   link: String
@@ -69,6 +70,7 @@ input ExperienceInput {
 }
 
 type Education {
+
   title: String
   date: String
   bPoints: [String]
@@ -76,6 +78,7 @@ type Education {
 }
 
 input EducationInput {
+
   title: String
   date: String
   bPoints: [String]
