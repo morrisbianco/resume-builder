@@ -27,7 +27,9 @@ export const ADD_USER = gql`
 export const CREATE_RESUME = gql`
   mutation createResume($name: String!, $city: String!, $state: String!, $address: String!, $zip: String!, $phoneNumber: String!, $summary: String!) {
     createResume(name: $name, city: $city, state: $state, address: $address, zip: $zip, phoneNumber: $phoneNumber, summary: $summary) {
-
+      user {
+        _id
+        username
       }
     }
   }
@@ -38,7 +40,6 @@ export const ADD_RESUME = gql`
     addResume(resumeData: $resumeData) {
       _id
       username
-      }
     }
   }
 `;
@@ -48,7 +49,6 @@ export const CREATE_EXP = gql`
     createExp(title: $title, role: $role, date: $date, location: $location, description: $description, keyAchievement: $keyAchievement) {
       _id
       username
-      }
     }
   }
 `;
@@ -58,7 +58,6 @@ export const CREATE_Ed = gql`
     createEd(title: $title, date: $date, bPoints: $bPoints, description: $description) {
       _id
       username
-      }
     }
   }
 `;
@@ -68,7 +67,6 @@ export const CREATE_Project = gql`
     createProject(title: $title, link: $link, bPoints: $bPoints, tools: $tools) {
       _id
       username
-      }
     }
   }
 `;
@@ -78,7 +76,6 @@ export const ADD_Exp = gql`
     addExp(expData: $expData) {
       _id
       username
-      }
     }
   }
 `;
@@ -88,7 +85,6 @@ export const ADD_Education = gql`
     addEducation(educationData: $educationData) {
       _id
       username
-      }
     }
   }
 `;
@@ -98,7 +94,6 @@ export const ADD_Project = gql`
     addProject(projectData: $projectData) {
       _id
       username
-      }
     }
   }
 `;

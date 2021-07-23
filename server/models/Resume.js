@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
-const Education = require('./Education');
-const Experience = require('./Experience');
-const Projects = require('./Projects');
+const eduSchema = require('./Education');
+const expSchema = require('./Experience');
+const projSchema = require('./Project');
 
 const resumeSchema = new Schema({
   name: {
@@ -43,17 +43,16 @@ const resumeSchema = new Schema({
       trim: true,
     }
   ],
-  eduSection: {
-    Education
-  },
-  expSection: {
-    Experience
-  },
-  ProjSection: {
-    Projects
-  }
+  eduSection:
+    [eduSchema]
+  ,
+  expSection:
+    [expSchema]
+  ,
+  ProjSection:
+    [projSchema]
 });
 
 const Resume = model('Resume', resumeSchema);
 
-module.exports = Resume;
+module.exports = resumeSchema;
