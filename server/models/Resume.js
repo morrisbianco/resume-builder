@@ -55,6 +55,6 @@ const resumeSchema = new Schema({
   }
 });
 
-const Resume = model('Contact', resumeSchema);
+const Resume = model('Resume', resumeSchema);
 
 module.exports = Resume;
