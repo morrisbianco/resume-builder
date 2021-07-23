@@ -18,14 +18,14 @@ type Contact {
   skills: [String]
 }
 
-type: Projects {
+type Project {
   title: String
   link: String
   bPoints: [String]
   tools: [String]
 }
 
-type: Experience {
+type Experience {
   title: String
   role: String
   date: String
@@ -34,7 +34,7 @@ type: Experience {
   keyAchievement: String
 }
 
-type: Education {
+type Education {
   title: String
   date: String
   bPoints: [String]
