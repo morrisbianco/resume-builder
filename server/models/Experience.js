@@ -22,10 +22,12 @@ const expSchema = new Schema({
     type: String,
     required: true,
   },
-  keyAchievements: {
-    type: String,
-    required: true,
-  }
+  keyAchievements: [
+    {
+      type: String,
+      required: true
+    }
+  ]
 });
 
 const Experience = model('Experience', expSchema);

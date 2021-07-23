@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-import Education from './Education'
-import Experience from './Experience'
-import Projects from './Projects'
+const Education = require('./Education');
+const Experience = require('./Experience');
+const Projects = require('./Projects');
 
 const resumeSchema = new Schema({
   name: {

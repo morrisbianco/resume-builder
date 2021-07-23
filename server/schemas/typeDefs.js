@@ -20,6 +20,9 @@ type Resume {
   phoneNumber: String
   summary: String
   skills: [String]
+  eduSection: [Projects]
+  expSection: [Experience]
+  ProjSection: [Education]
 }
 
 input Resume {
@@ -58,7 +61,7 @@ type Experience {
   date: String
   location: String
   description: String
-  keyAchievement: String
+  keyAchievement: [String]
 }
 
 input ExperienceInput {
@@ -79,7 +82,6 @@ type Education {
 }
 
 input EducationInput {
-
   title: String
   date: String
   bPoints: [String]
