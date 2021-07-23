@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
+import { Link } from 'react-router-dom';
 
-const Build2 = () => {
+const Build4 = () => {
   const [form, setForm] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -44,33 +44,32 @@ const Build2 = () => {
       <form className="form">
 
         <div className="field pt-5 mx-5 px-5">
-          <h3>Education</h3>
-          <label className="label">School:</label>
+          <h3>Projects</h3>
+          <label className="label">Title:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="School of Resume " />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Project Title" />
           </div>
-          <label className="label">Location:</label>
+          <label className="label">Link:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="City, State Abreviation" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Link to Website" />
           </div>
-          <label className="label">Completion Date:</label>
+          <label className="label">Bullet Points:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Month, Year" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Describe Aspects" />
           </div>
-          <label className="label">Description:</label>
+          <label className="label">Tools Used:</label>
           <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Describe..." />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="resume, speaking, writing" />
           </div>
         </div>
-
         <div className="has-text-right">
-          <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/Build3">
-            Next
-          </Link>
+          <button className="button p-5 m-5 px-5" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
   );
 };
 
-export default Build2;
+export default Build4;
