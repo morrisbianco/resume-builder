@@ -12,7 +12,6 @@ input {
 
 .navbar-menu {
   background: -webkit-linear-gradient(to right, #004e92, #000428);
-
 }
 
 .va {
@@ -20,21 +19,25 @@ input {
   align-items: center;
 }
 
-
-.hero,
-.cta {
-  background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1d4568, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.hero, .cta {
+  background: #000428;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1d4568, #000428);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.container-wrap {
+  box-shadow: 0 2px 13px -2px rgba(0, 0, 0, .2);
+  padding: 20px;
+  margin-bottom: 10px;
+}
 
 footer {
   color: white;
   background: rgb(14, 14, 14) !important;
 }
-
 
 footer a {
   color: rgb(36, 78, 156);
@@ -77,7 +80,7 @@ hr.content-divider {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 4px solid black;
+  border-top: 20px solid white;
 }
 
 #parallax-2 hr {
@@ -90,11 +93,11 @@ hr.content-divider {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 4px solid black;
+  border-top: 20px solid white;
 }
 
 #parallax-3 hr {
-  background: 4px solid black;
+  background: 20px solid black;
 }
 
 .label {
