@@ -27,10 +27,8 @@ export const ADD_USER = gql`
 export const CREATE_RESUME = gql`
   mutation createResume($name: String!, $city: String!, $state: String!, $address: String!, $zip: String!, $phoneNumber: String!, $summary: String!) {
     createResume(name: $name, city: $city, state: $state, address: $address, zip: $zip, phoneNumber: $phoneNumber, summary: $summary) {
-      user {
         _id
         username
-      }
     }
   }
 `;
