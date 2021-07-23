@@ -1,7 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+import Education from './Education'
+import Experience from './Experience'
+import Projects from './Projects'
 
-const contactSchema = new Schema({
+const resumeSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -40,9 +43,18 @@ const contactSchema = new Schema({
       type: String,
       trim: true,
     }
-  ]
+  ],
+  eduSection: {
+    Education
+  },
+  expSection: {
+    Experience
+  },
+  ProjSection: {
+    Projects
+  }
 });
 
-const Contact = model('Contact', contactSchema);
+const Resume = model('Contact', resumeSchema);
 
-module.exports = Contact;
+module.exports = Resume;
