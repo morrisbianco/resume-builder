@@ -22,6 +22,6 @@ const eduSchema = new Schema({
   }
 });
 
-const Project = model('Project', eduSchema);
+const Education = model('Education', eduSchema);
 
-module.exports = Project;
+module.exports = Education;

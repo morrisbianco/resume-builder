@@ -13,7 +13,7 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
-
+  console.log("Sign Up Error: ", error)
   const handleChange = (event) => {
     const { name, value } = event.target;
 
