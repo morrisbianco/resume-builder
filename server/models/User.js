@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-import Resume from './Resume'
+const Resume = require('./Resume');
 
 const userSchema = new Schema({
   username: {

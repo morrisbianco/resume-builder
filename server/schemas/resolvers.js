@@ -20,7 +20,7 @@ const resolvers = {
 
   Mutation: {
     addUser: async (_, { username, email, password }) => {
-      console.log("Resolver Add User: ", username, email, password)
+      console.log("Resolver Add User: ", username, email, password);
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
@@ -69,7 +69,7 @@ const resolvers = {
     addExp: async (_, { expData }, context) => {
       const updateResume = await Resume.findOneAndUpdate(
         { _id: context.resume._id },
-        { $push: { experience: expData } },
+        { $push: { expSection: expData } },
         { new: true }
       );
       return updateResume;
@@ -77,7 +77,7 @@ const resolvers = {
     addEducation: async (_, { educationData }, context) => {
       const updateResume = await Resume.findOneAndUpdate(
         { _id: context.resume._id },
-        { $push: { experience: educationData } },
+        { $push: { eduSection: educationData } },
         { new: true }
       );
       return updateResume;
@@ -85,7 +85,7 @@ const resolvers = {
     addProject: async (_, { projectData }, context) => {
       const updateResume = await Resume.findOneAndUpdate(
         { _id: context.resume._id },
-        { $push: { experience: projectData } },
+        { $push: { projSection: projectData } },
         { new: true }
       );
       return updateResume;
