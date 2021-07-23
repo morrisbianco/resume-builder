@@ -41,12 +41,6 @@ const Build3 = () => {
         </div>
       )}
       <form className="form">
-        <div className="field pt-5 mx-5 px-5">
-          <label className="label">Education:</label>
-          <div className="control">
-            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Please enter your name here" />
-          </div>
-        </div>
 
         <div className="field pt-5 mx-5 px-5">
           <label className="label">Work Experience:</label>

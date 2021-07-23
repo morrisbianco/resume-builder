@@ -42,17 +42,11 @@ const Build2 = () => {
         </div>
       )}
       <form className="form">
-        <div className="field p-5 mx-5 px-5">
-          <label className="label">Summary:</label>
+        
+      <div className="field pt-5 mx-5 px-5">
+          <label className="label">Education:</label>
           <div className="control">
-            <textarea className="textarea" name="summary" value={form.summary} onChange={handleInputChange} placeholder="Please enter your message here"></textarea>
-          </div>
-        </div>
-
-        <div className="field p-5 mx-5 px-5">
-          <label className="label">Skills:</label>
-          <div className="control">
-            <textarea className="textarea" name="skills" value={form.skills} onChange={handleInputChange} placeholder="Please enter your message here"></textarea>
+            <input className="input" type="text" name="education" value={form.education} onChange={handleInputChange} placeholder="Please enter your name here" />
           </div>
         </div>
 

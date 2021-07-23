@@ -98,6 +98,20 @@ const Build = () => {
           </div>
         </div>
 
+        <div className="field p-5 mx-5 px-5">
+          <label className="label">Summary:</label>
+          <div className="control">
+            <textarea className="textarea" name="summary" value={form.summary} onChange={handleInputChange} placeholder="Please enter your message here"></textarea>
+          </div>
+        </div>
+
+        <div className="field p-5 mx-5 px-5">
+          <label className="label">Skills:</label>
+          <div className="control">
+            <textarea className="textarea" name="skills" value={form.skills} onChange={handleInputChange} placeholder="Please enter your message here"></textarea>
+          </div>
+        </div>
+
         <div className="has-text-right">
           <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/Build2">
             Next
