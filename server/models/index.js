@@ -1,7 +1,7 @@
 const User = require('./User');
-const Projects = require('./Projects');
+const Project = require('./Project');
 const Experience = require('./Experience');
 const Education = require('./Education');
 const Contact = require('./Contact');
 
-module.exports = { User, Projects, Experience, Education, Contact };
+module.exports = { User, Project, Experience, Education, Contact };

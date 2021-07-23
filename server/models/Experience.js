@@ -28,6 +28,6 @@ const expSchema = new Schema({
   }
 });
 
-const Project = model('Project', expSchema);
+const Experience = model('Experience', expSchema);
 
-module.exports = Project;
+module.exports = Experience;
