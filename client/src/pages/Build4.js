@@ -47,19 +47,19 @@ const Build4 = () => {
           <h3>Projects</h3>
           <label className="label">Title:</label>
           <div className="control">
-            <input className="input" type="text" name="title" value={form.title} onChange={handleInputChange} placeholder="Project Title" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Project Title" />
           </div>
           <label className="label">Link:</label>
           <div className="control">
-            <input className="input" type="text" name="link" value={form.link} onChange={handleInputChange} placeholder="Link to Website" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Link to Website" />
           </div>
           <label className="label">Bullet Points:</label>
           <div className="control">
-            <input className="input" type="text" name="points" value={form.points} onChange={handleInputChange} placeholder="Describe Aspects" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="Describe Aspects" />
           </div>
           <label className="label">Tools Used:</label>
           <div className="control">
-            <input className="input" type="text" name="tools" value={form.tools} onChange={handleInputChange} placeholder="resume, speaking, writing" />
+            <input className="input" type="text" name="work" value={form.work} onChange={handleInputChange} placeholder="resume, speaking, writing" />
           </div>
         </div>
         <div className="has-text-right">
