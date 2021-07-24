@@ -13,7 +13,7 @@ const styles = {
     color: 'white',
     fontWeight: 800,
     fontSize: '4rem',
-    // font-family: 'Nunito Sans', sans-serif,
+    fontFamily: 'BlinkMacSystemFont',
     textShadow: '1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3)',
   },
   
