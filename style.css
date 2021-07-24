@@ -46,7 +46,7 @@ a {
 }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.568);
+  background: rgba(255, 255, 255, 0.753);
 }
 
 .va {
@@ -107,7 +107,7 @@ hr.content-divider {
 }
 
 #parallax-1 hr {
-  background: black;
+  background: rgb(65, 216, 51);
 }
 
 #parallax-2 {
