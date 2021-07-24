@@ -24,4 +24,4 @@ const eduSchema = new Schema({
 
 const Education = model('Education', eduSchema);
 
-module.exports = eduSchema;
+module.exports = Education;
