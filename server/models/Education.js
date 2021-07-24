@@ -13,15 +13,13 @@ const eduSchema = new Schema({
   bPoints: [
     {
       type: String,
-      required: true,
     }
   ],
   description: {
     type: String,
-    required: true,
   }
 });
 
 const Education = model('Education', eduSchema);
 
-module.exports = eduSchema;
+module.exports = Education;

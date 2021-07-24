@@ -25,11 +25,10 @@ const expSchema = new Schema({
   keyAchievements: [
     {
       type: String,
-      required: true
     }
   ]
 });
 
 const Experience = model('Experience', expSchema);
 
-module.exports = expSchema;
+module.exports = Experience;

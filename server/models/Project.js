@@ -13,17 +13,15 @@ const projSchema = new Schema({
     bPoints: [
         {
             type: String,
-            required: true,
         }
     ],
     tools: [
         {
             type: String,
-            required: true,
         }
     ]
 });
 
 const Project = model('Project', projSchema);
 
-module.exports = projSchema;
+module.exports = Project;
