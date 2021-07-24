@@ -138,7 +138,7 @@ const Signup = () => {
             </div>
             <div className="column right has-text-centered" style={styles.right}>
               <h1 className="title is-4" style={styles.rightTitle}>Signup & get started!</h1>
-              <p className="" style={styles.rightDescription}>Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+              <p className="" style={styles.rightDescription}>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
               {data ? (
                 <p>
                   Success! You may now head{' '}
