@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+const styles = {
+  containerWrap: {
+    boxShadow: '0 2px 13px -2px rgba(0, 0, 0, .2)',
+    padding: '20px',
+    marginBottom: '10px',
+  },
+
+  navbarMenu: {
+    background: '-webkit-linear-gradient(to right, #004e92, #000428)',
+  },
+};
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -14,42 +26,97 @@ const Header = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Link className="btn btn-lg btn-info m-2" to="/me">
-            {Auth.getProfile().data.username}'s profile
-          </Link>
-          <button className="btn btn-lg btn-light m-2" onClick={logout}>
-            Logout
-          </button>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <Link className="button is-primary" to="/me">
+                  {Auth.getProfile().data.username}'s profile
+                </Link>
+                <Link className="button is-light" onClick={logout}>
+                  Logout
+                </Link>
+              </div>
+            </div>
+          </div>
         </>
       );
     }
     // If logged out show login controls
     return (
       <>
-        <Link className="btn btn-lg btn-info m-2" to="/login">
-          Login
-        </Link>
-        <Link className="btn btn-lg btn-light m-2" to="/signup">
-          Signup
-        </Link>
+        <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <Link className="button is-primary" to="/signup">
+                  <strong>Sign up</strong>
+                </Link>
+                <Link className="button is-light" to="/login">
+                  Log in
+                </Link>
+              </div>
+            </div>
+          </div>
       </>
     )
   };
 
   return (
-    <header className="bg-dark text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Resume Builder</h1>
-          </Link>
-        </div>
-        <div>
-          <p className="m-0 text-center">Simple App to Build Resumes.</p>
-          {renderControls()}
-        </div>
+    <>
+      <div className="container-wrap" style={styles.containerWrap}>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <Link className="navbar-item" to="/">
+              <i className="fas fa-file-alt" width="112" height="28"></i>
+            </Link>
+
+            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" className="navbar-menu" style={styles.navbarMenu}>
+            <div className="navbar-start">
+              <Link className="navbar-item" to="/">
+                Home
+              </Link>
+
+              <a className="navbar-item">
+                Documentation
+              </a>
+
+              <div className="navbar-item has-dropdown is-hoverable">
+                <a className="navbar-link">
+                  More
+                </a>
+
+                <div className="navbar-dropdown">
+                  <Link className="navbar-item" to="/me">
+                    About
+                  </Link>
+                  <a className="navbar-item">
+                    Contact
+                  </a>
+                  <hr className="navbar-divider"></hr>
+                  <a className="navbar-item">
+                    Report an issue
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                {renderControls()}
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-    </header>
+    </>
   );
 };
 
