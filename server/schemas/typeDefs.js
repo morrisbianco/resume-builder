@@ -17,6 +17,8 @@ type Resume {
   state: String
   address: String
   zip: String
+  linkedIn: String
+  github: String
   phoneNumber: String
   summary: String
   skills: [String]

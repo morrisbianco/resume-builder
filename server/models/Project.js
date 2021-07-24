@@ -13,13 +13,11 @@ const projSchema = new Schema({
     bPoints: [
         {
             type: String,
-            required: true,
         }
     ],
     tools: [
         {
             type: String,
-            required: true,
         }
     ]
 });

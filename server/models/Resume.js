@@ -11,22 +11,18 @@ const resumeSchema = new Schema({
   city: {
     type: String,
     required: true,
-    minLength: 15,
   },
   state: {
     type: String,
     required: true,
-    minLength: 15,
   },
   address: {
     type: String,
     required: true,
-    minLength: 25,
   },
   zip: {
     type: String,
     required: true,
-    minLength: 5,
   },
   linkedIn: {
     type: String,
@@ -37,7 +33,7 @@ const resumeSchema = new Schema({
   phoneNumber: {
     type: String,
     required: true,
-    minLength: 10,
+    minLength: 7,
   },
   summary: {
     type: String,
