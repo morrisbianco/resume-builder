@@ -1,6 +1,9 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const Resume = require('./Resume');
+const Education = require('./Education');
+const Experience = require('./Experience');
+const Project = require('./Project');
 
 const userSchema = new Schema({
   username: {
@@ -20,10 +23,27 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  resumes: [
+  resume:
+  {
+    type: Schema.Types.ObjectId,
+    ref: "Resume"
+  },
+  education: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Resume"
+      ref: "Education"
+    }
+  ],
+  experiences: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Experience"
+    }
+  ],
+  projects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Project"
     }
   ]
 });
