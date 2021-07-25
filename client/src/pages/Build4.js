@@ -2,16 +2,11 @@ import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
-import { ADD_Project } from '../utils/mutations';
+import { CREATE_Project } from '../utils/mutations';
 
 const Build4 = () => {
-  const [form, setForm] = useState({
-    title: '',
-    link: '',
-    points: '',
-    tools: ''
-  });
-  const [addProj, { error, data }] = useMutation(ADD_Project);
+  const [form, setForm] = useState({});
+  const [createProject, { error, data }] = useMutation(CREATE_Project);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = async (e) => {
@@ -22,31 +17,30 @@ const Build4 = () => {
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
     e.preventDefault();
-    console.log(form);
+  };
 
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
+
+    // if (!form.name || !validateEmail(form.email)) {
+    //   setErrorMessage('Email or username is invalid');
+    //   return;
+    // }
+    // if (!form.summary || !checkIfValid(form.summary)) {
+    //   setErrorMessage(
+    //     `Please include a message`
+    //     );
+    //     return;
+    //   }
+    alert(`success`);
+    console.log(form);
     try {
-      const { data } = await addProj({
+      const { data } = await createProject({
         variables: { ...form },
       });
     } catch (e) {
       console.error(e);
     }
-  };
-
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-
-    if (!form.name || !validateEmail(form.email)) {
-      setErrorMessage('Email or username is invalid');
-      return;
-    }
-    if (!form.summary || !checkIfValid(form.summary)) {
-      setErrorMessage(
-        `Please include a message`
-      );
-      return;
-    }
-    alert(`Hello ${form.name}`);
 
     setForm({});
   };
@@ -81,9 +75,9 @@ const Build4 = () => {
           </div>
         </div>
         <div className="has-text-right">
-          <button className="button p-5 m-5 px-5" onClick={handleSubmit}>
+          <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/me">
             Submit
-          </button>
+          </Link>
         </div>
       </form>
     </div>

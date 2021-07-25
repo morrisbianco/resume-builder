@@ -9,16 +9,14 @@ const projSchema = new Schema({
         type: String,
         required: true,
     },
-    bPoints: [
-        {
-            type: String,
-        }
-    ],
-    tools: [
-        {
-            type: String,
-        }
-    ]
+    points:
+    {
+        type: String,
+    },
+    tools:
+    {
+        type: String,
+    }
 });
 
 const Project = model('Project', projSchema);
