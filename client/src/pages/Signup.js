@@ -124,13 +124,15 @@ const Signup = () => {
           <div className="columns">
             <div className="column left" style={styles.left}>
               <h1 className="title" style={styles.leftTitle}>Resume Builder</h1>
-              <h2 className="">Lorem ipsum dolor sit amet.</h2>
-              <p style={styles.leftP}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ex deleniti aliquam tempora libero
-                excepturi vero soluta odio optio sed.</p>
+
+              <h2 className="">Create an account today!</h2>
+              <br />
+              <p>With resume builder you can save and store your resumes. The one stop place to build a resume completely free of charge or ads!</p>
             </div>
             <div className="column right has-text-centered" style={styles.right}>
-              <h1 className="title is-4" style={styles.rightTitle}>Sign up today</h1>
-              <p className="" style={styles.rightDescription}>Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+              <h1 className="title is-4" style={styles.rightTitle}>Signup & get started!</h1>
+              <p className="" style={styles.rightDescription}>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+
               {data ? (
                 <p>
                   Success! You may now head{' '}
@@ -138,71 +140,40 @@ const Signup = () => {
                 </p>
               ) : (
                 <form onSubmit={handleFormSubmit}>
-                  <div class="field">
-                    <div class="control">
-                      <input class="form-input is-medium" type="text" name="username" placeholder="Username" value={formState.username}
-                          onChange={handleChange} style={styles.input}/>
-                        </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input is-medium" type="text" name="username" placeholder="Username" value={formState.username}
+                        onChange={handleChange} style={styles.input} />
                     </div>
-
-                    <div className="field">
-                      <div className="control">
-                        <input className="form-input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
-                          onChange={handleChange} style={styles.input} />
-                      </div>
+                  </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
+                        onChange={handleChange} style={styles.input} />
                     </div>
-
-                    <div className="field">
-                      <div className="control">
-                        <input className="form-input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
-                          onChange={handleChange} style={styles.input} />
-                      </div>
+                  </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
+                        onChange={handleChange} style={styles.input} />
                     </div>
-                    <button className="button is-block is-primary is-fullwidth is-medium">Submit</button>
-                    <br />
-                    <small style={styles.rightSmall}><Link className="underscore" to="/login" style={styles.underscore}>Already have an account?</Link></small>
+                  </div>
+                  <button className="button is-block is-primary is-fullwidth is-medium">Submit</button>
+                  <br />
+                  <small style={styles.rightSmall}><Link className="underscore" to="/login" style={styles.underscore}>Already have an account?</Link></small>
                 </form>
-                )}
-                  {error && (
-                    <div classNameName="my-3 p-3 bg-danger text-white">
-                      {error.message}
-                    </div>
-                  )}
-              </div>
+              )}
+              {error && (
+                <div classNameName="my-3 p-3 bg-danger text-white">
+                  {error.message}
+                </div>
+              )}
             </div>
           </div>
-          <div className="column is-8 is-offset-2">
-            <br />
-            <nav className="level">
-              <div className="level-left">
-                <div className="level-item">
-                  <span className="icon">
-                    <i className="fab fa-twitter" style={styles.fab}></i>
-                  </span> &emsp;
-                  <span className="icon">
-                    <i className="fab fa-facebook" style={styles.fab}></i>
-                  </span> &emsp;
-                  <span className="icon">
-                    <i className="fab fa-instagram" style={styles.fab}></i>
-                  </span> &emsp;
-                  <span className="icon">
-                    <i className="fab fa-github" style={styles.fab}></i>
-                  </span> &emsp;
-                  <span className="icon">
-                    <i className="fas fa-envelope" style={styles.fas}></i>
-                  </span>
-                </div>
-              </div>
-              <div className="level-right">
-                <small className="level-item" >
-                  &copy; Super Cool Website. All Rights Reserved.
-                </small>
-              </div>
-            </nav>
-          </div>
         </div>
-      </section>
-      );
+      </div>
+    </section>
+  );
 };
 
       export default Signup;
