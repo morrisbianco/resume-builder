@@ -41,50 +41,50 @@ input ResumeInput {
 }
 
 type Project {
-  title: String
-  link: String
-  bPoints: [String]
-  tools: [String]
+  title: String!
+  link: String!
+  points: String
+  tools: String
 }
 
 
 input ProjectInput {
-  title: String
-  link: String
-  bPoints: [String]
-  tools: [String]
+  title: String!
+  link: String!
+  points: String
+  tools: String
 }
 
 
 type Experience {
-  title: String
-  role: String
-  date: String
-  location: String
-  description: String
-  keyAchievement: [String]
+  company: String!
+  role: String!
+  date: String!
+  location: String!
+  description: String!
+  keyAchievements: String
 }
 
 input ExperienceInput {
-  title: String
-  role: String
-  date: String
-  location: String
-  description: String
-  keyAchievement: [String]
+  company: String!
+  role: String!
+  date: String!
+  location: String!
+  description: String!
+  keyAchievements: String
 }
 
 type Education {
-  title: String
+  school: String
   date: String
-  bPoints: [String]
+  location: String
   description: String
 }
 
 input EducationInput {
-  title: String
+  school: String
   date: String
-  bPoints: [String]
+  location: String
   description: String
 }
 
@@ -102,11 +102,11 @@ input EducationInput {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, linkedIn: String, github: String, phoneNumber: String!, summary: String!): Resume
+    createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, linkedIn: String, github: String, phoneNumber: String!, summary: String!, skills: [String]): Resume
     addResume(resumeData: ResumeInput): User
-    createExp(title: String!, role: String!, date: String!, location: String!, description: String!, keyAchievement: String!): Resume
-    createEd(title: String!, date: String!, bPoints: [String], description: String!): Resume
-    createProject(title: String!, link: String!, bPoints: [String], tools: [String]): Resume
+    createExp(company: String!, role: String!, date: String!, location: String!, description: String!, keyAchievements: String): Experience
+    createEd(school: String!, date: String!, location: String, description: String!): Education
+    createProject(title: String!, link: String!, points: String, tools: String): Project
     addExp(expData: ExperienceInput): Resume
     addEducation(educationData: EducationInput): Resume
     addProject(projectData: ProjectInput): Resume
