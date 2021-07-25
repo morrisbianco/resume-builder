@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 const styles = {
   hero: {
-    background: 'linear-gradient(to right, #1d4568, #000428)',
+    background: 'linear-gradient(#e66465, #9198e5)',
   },
 
   input: {
@@ -24,14 +24,14 @@ const styles = {
   // }
 
   body: {
-    background: 'rgb(240, 240, 240)',
-    height: '100vh',
+    background: 'linear-gradient(#e66465, #9198e5)',
     color: 'hsla(0, 0%, 0%, 0.66)',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   register: {
     marginTop: '10rem',
+    marginBottom: '10rem',
     background: 'white',
     borderRadius: '10px',
   },
@@ -48,7 +48,7 @@ const styles = {
   leftTitle: {
     fontWeight: 800,
     letterSpacing: '-2px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   leftP: {
@@ -59,7 +59,7 @@ const styles = {
   rightTitle: {
     fontWeight: 800,
     letterSpacing: '-1px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   rightDescription: {
@@ -144,7 +144,7 @@ const Login = (props) => {
                   <div className="field">
                     <div className="control">
 
-                      <input className="form-input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
+                      <input className="input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
                     onChange={handleChange} style={styles.input}/>
 
                     </div>
@@ -153,7 +153,7 @@ const Login = (props) => {
                   <div className="field">
                     <div className="control">
 
-                      <input className="form-input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
+                      <input className="input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
                     onChange={handleChange} style={styles.input}/>
 
                     </div>

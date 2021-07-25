@@ -26,13 +26,13 @@ const styles = {
 
   body: {
     background: 'rgb(240, 240, 240)',
-    height: '100vh',
     color: 'hsla(0, 0%, 0%, 0.66)',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   register: {
     marginTop: '10rem',
+    marginBottom: '10rem',
     background: 'white',
     borderRadius: '10px',
   },
@@ -49,7 +49,7 @@ const styles = {
   leftTitle: {
     fontWeight: 800,
     letterSpacing: '-2px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   leftP: {
@@ -60,7 +60,7 @@ const styles = {
   rightTitle: {
     fontWeight: 800,
     letterSpacing: '-1px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   rightDescription: {
@@ -118,7 +118,7 @@ const Signup = () => {
   };
 
   return (
-    <section>
+    <section className="container">
       <div className="columns is-multiline" style={styles.body}>
         <div className="column is-8 is-offset-2 register" style={styles.register}>
           <div className="columns">

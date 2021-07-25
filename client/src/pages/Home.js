@@ -69,7 +69,7 @@ const styles = {
   },
 
   hero: {
-    background: 'linear-gradient(to right, #1d4568, #000428)',
+    background: 'linear-gradient(#e66465, #9198e5)',
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   },
 
