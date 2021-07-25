@@ -7,11 +7,11 @@ import Auth from '../utils/auth';
 
 const styles = {
   hero: {
-    background: 'linear-gradient(to right, #1d4568, #000428)',
+    background: 'rgb(240, 240, 240)',
   },
 
   input: {
-    color: 'gray',
+    color: 'black',
     fontSize: '1rem',
   },
 
@@ -19,19 +19,16 @@ const styles = {
     textDecoration: 'underline',
   },
 
-  // input::placeholder {
-  //   color: white !important;
-  // }
 
   body: {
     background: 'rgb(240, 240, 240)',
-    height: '100vh',
     color: 'hsla(0, 0%, 0%, 0.66)',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   register: {
     marginTop: '10rem',
+    marginBottom: '10rem',
     background: 'white',
     borderRadius: '10px',
   },
@@ -48,7 +45,7 @@ const styles = {
   leftTitle: {
     fontWeight: 800,
     letterSpacing: '-2px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   leftP: {
@@ -59,7 +56,7 @@ const styles = {
   rightTitle: {
     fontWeight: 800,
     letterSpacing: '-1px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   rightDescription: {
@@ -69,19 +66,6 @@ const styles = {
     fontSize: '1.15rem',
   },
 
-  rightSmall: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-  },
-
-  fab: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-    marginRight: '1rem',
-  },
-
-  fas: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-    marginRight: '1rem',
-  }
 
 };
 
@@ -121,9 +105,9 @@ const Login = (props) => {
   };
 
   return (
-    <section>
+    
       <div className="columns is-multiline" style={styles.body}>
-        <div className="column is-8 is-offset-2 register" style={styles.register}>
+        <div className="column is-6 is-offset-3 register" style={styles.register}>
           <div className="columns">
             <div className="column left" style={styles.left}>
               <h1 className="title" style={styles.leftTitle}>Resume Builder</h1>
@@ -144,7 +128,7 @@ const Login = (props) => {
                   <div className="field">
                     <div className="control">
 
-                      <input className="form-input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
+                      <input className="input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
                     onChange={handleChange} style={styles.input}/>
 
                     </div>
@@ -153,7 +137,7 @@ const Login = (props) => {
                   <div className="field">
                     <div className="control">
 
-                      <input className="form-input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
+                      <input className="input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
                     onChange={handleChange} style={styles.input}/>
 
                     </div>
@@ -174,7 +158,7 @@ const Login = (props) => {
           </div>
         </div>
       </div>
-    </section>
+    
   );
 };
 

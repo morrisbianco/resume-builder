@@ -68,10 +68,6 @@ const styles = {
     color: 'black',
   },
 
-  hero: {
-    background: 'linear-gradient(to right, #1d4568, #000428)',
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  },
 
 };
 
@@ -146,24 +142,7 @@ const Home = () => {
       </div>
     </div>
   </section>
-  
-  <section className="hero is-small" style={styles.hero}>
-    <div className="hero-body">
-      <div className="container">
-        <h1 className="title is-1 " style={styles.title}>Lorem title</h1>
-        <h2 className="subtitle" style={styles.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ad sequi temporibus
-          cupiditate voluptatibus nihil eum non, odit exercitationem, voluptatum unde quo, illo velit possimus ipsam!
-          Beatae dolorum quo facilis.
-          <br/>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos delectus quaerat officia magni doloribus
-          laudantium odit natus consequatur accusantium et ullam, ad quidem reiciendis in quasi numquam, nisi possimus
-          unde!
-        </h2>
-        <a href="#" className="button is-white is-medium is-inverted">Learn More&ensp;<i
-            className="fas fa-angle-double-right"></i></a>
-      </div>
-    </div>
-  </section>
+ 
     </>
   );
 };

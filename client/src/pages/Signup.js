@@ -12,7 +12,7 @@ const styles = {
   },
 
   input: {
-    color: 'gray',
+    color: 'black',
     fontSize: '1rem',
   },
 
@@ -26,13 +26,13 @@ const styles = {
 
   body: {
     background: 'rgb(240, 240, 240)',
-    height: '100vh',
     color: 'hsla(0, 0%, 0%, 0.66)',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   register: {
     marginTop: '10rem',
+    marginBottom: '10rem',
     background: 'white',
     borderRadius: '10px',
   },
@@ -49,7 +49,7 @@ const styles = {
   leftTitle: {
     fontWeight: 800,
     letterSpacing: '-2px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   leftP: {
@@ -60,11 +60,11 @@ const styles = {
   rightTitle: {
     fontWeight: 800,
     letterSpacing: '-1px',
-    fontFamily: 'BlinkMacSystemFont',
+    fontFamily: 'arial',
   },
 
   rightDescription: {
-    marginTop: '1rem',
+    
     marginBottom: '1rem',
     color: 'hsla(0, 0%, 0%, 0.33)',
     fontSize: '1.15rem',
@@ -118,9 +118,9 @@ const Signup = () => {
   };
 
   return (
-    <section>
+    <section className="">
       <div className="columns is-multiline" style={styles.body}>
-        <div className="column is-8 is-offset-2 register" style={styles.register}>
+        <div className="column is-6 is-offset-3 register" style={styles.register}>
           <div className="columns">
             <div className="column left" style={styles.left}>
               <h1 className="title" style={styles.leftTitle}>Resume Builder</h1>
