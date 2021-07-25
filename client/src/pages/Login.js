@@ -23,13 +23,6 @@ const styles = {
   //   color: white !important;
   // }
 
-  // :root {
-  //   --brandColor: hsl(0, 0%, 0%);
-  //   --background: rgb(240, 240, 240);
-  //   --textDark: hsla(0, 0%, 0%, 0.66);
-  //   --textLight: hsla(0, 0%, 0%, 0.33);
-  // }
-
   body: {
     background: 'rgb(240, 240, 240)',
     height: '100vh',
@@ -149,14 +142,14 @@ const Login = (props) => {
                 <form onSubmit={handleFormSubmit}>
                   <div className="field">
                     <div className="control">
-                      <input className="input is-medium" type="email" placeholder="Email" value={formState.email}
+                      <input className="form-input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
                     onChange={handleChange} style={styles.input}/>
                     </div>
                   </div>
 
                   <div className="field">
                     <div className="control">
-                      <input className="input is-medium" type="password" placeholder="Password" value={formState.password}
+                      <input className="form-input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
                     onChange={handleChange} style={styles.input}/>
                     </div>
                   </div>
@@ -166,7 +159,7 @@ const Login = (props) => {
                 </form>
                 )}
                 {error && (
-                <div classNameName="my-3 p-3 bg-danger text-white">
+                <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
                 </div>
               )}
@@ -207,6 +200,6 @@ const Login = (props) => {
   );
 };
 
-// style="color: var(--textLight)"
+// style="color: hsla(0, 0%, 0%, 0.33)"
 
 export default Login;
