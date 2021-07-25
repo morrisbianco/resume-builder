@@ -1,19 +1,38 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
+import { ADD_Education } from '../utils/mutations';
 
 const Build2 = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    school: '',
+    location: '',
+    date: '',
+    description: ''
+  });
+  const [addEdu, { error, data }] = useMutation(ADD_Education);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
     console.log(target.name);
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
+    e.preventDefault();
+    console.log(form);
+
+    try {
+      const { data } = await addEdu({
+        variables: { ...form },
+      });
+    } catch (e) {
+      console.error(e);
+    }
   };
+
 
   const handleSubmit = (e) => {
     // e.preventDefault();
@@ -55,7 +74,7 @@ const Build2 = () => {
           </div>
           <label className="label">Completion Date:</label>
           <div className="control">
-            <input className="input" type="text" name="onChange" value={form.date} onChange={handleInputChange} placeholder="Month, Year" />
+            <input className="input" type="text" name="date" value={form.date} onChange={handleInputChange} placeholder="Month, Year" />
           </div>
           <label className="label">Description:</label>
           <div className="control">
