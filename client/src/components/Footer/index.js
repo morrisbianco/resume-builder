@@ -5,6 +5,7 @@ const styles = {
   footer: {
     color: 'white',
     background: 'rgb(14, 14, 14)',
+    padding: '30px'
   },
   
   a: {
@@ -16,7 +17,7 @@ const Footer = () => {
   const location = useLocation();
   const history = useHistory();
   return (
-    <footer className="footer" style={styles.footer}>
+    <footer className=" bottom" style={styles.footer}>
       <div className="content has-text-centered">
         <div className="container text-center mb-5">
           {location.pathname !== '/' && (

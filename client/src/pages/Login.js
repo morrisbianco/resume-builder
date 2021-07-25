@@ -7,11 +7,11 @@ import Auth from '../utils/auth';
 
 const styles = {
   hero: {
-    background: 'linear-gradient(#e66465, #9198e5)',
+    background: 'rgb(240, 240, 240)',
   },
 
   input: {
-    color: 'gray',
+    color: 'black',
     fontSize: '1rem',
   },
 
@@ -19,12 +19,9 @@ const styles = {
     textDecoration: 'underline',
   },
 
-  // input::placeholder {
-  //   color: white !important;
-  // }
 
   body: {
-    background: 'linear-gradient(#e66465, #9198e5)',
+    background: 'rgb(240, 240, 240)',
     color: 'hsla(0, 0%, 0%, 0.66)',
     fontFamily: 'arial',
   },
@@ -69,19 +66,6 @@ const styles = {
     fontSize: '1.15rem',
   },
 
-  rightSmall: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-  },
-
-  fab: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-    marginRight: '1rem',
-  },
-
-  fas: {
-    color: 'hsla(0, 0%, 0%, 0.33)',
-    marginRight: '1rem',
-  }
 
 };
 
@@ -121,9 +105,9 @@ const Login = (props) => {
   };
 
   return (
-    <section>
+    
       <div className="columns is-multiline" style={styles.body}>
-        <div className="column is-8 is-offset-2 register" style={styles.register}>
+        <div className="column is-6 is-offset-3 register" style={styles.register}>
           <div className="columns">
             <div className="column left" style={styles.left}>
               <h1 className="title" style={styles.leftTitle}>Resume Builder</h1>
@@ -174,7 +158,7 @@ const Login = (props) => {
           </div>
         </div>
       </div>
-    </section>
+    
   );
 };
 

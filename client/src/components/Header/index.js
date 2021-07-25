@@ -6,14 +6,14 @@ import Auth from '../../utils/auth';
 const styles = {
   containerWrap: {
     boxShadow: '0 2px 13px -2px rgba(0, 0, 0, .2)',
-    marginBottom: '85px',
+    marginBottom: '75px',
     background: 'grey',
   },
 
   navbar: {
     backgroundColor: 'rgba(255, 255, 255, 0.753)',
-    border: 'solid grey 1px',
-    padding: '10px'
+    borderBottom: 'solid grey 1px',
+    padding: '5px'
   },
 };
 

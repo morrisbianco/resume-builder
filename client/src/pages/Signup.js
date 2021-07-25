@@ -12,7 +12,7 @@ const styles = {
   },
 
   input: {
-    color: 'gray',
+    color: 'black',
     fontSize: '1rem',
   },
 
@@ -64,7 +64,7 @@ const styles = {
   },
 
   rightDescription: {
-    marginTop: '1rem',
+    
     marginBottom: '1rem',
     color: 'hsla(0, 0%, 0%, 0.33)',
     fontSize: '1.15rem',
@@ -118,9 +118,9 @@ const Signup = () => {
   };
 
   return (
-    <section className="container">
+    <section className="">
       <div className="columns is-multiline" style={styles.body}>
-        <div className="column is-8 is-offset-2 register" style={styles.register}>
+        <div className="column is-6 is-offset-3 register" style={styles.register}>
           <div className="columns">
             <div className="column left" style={styles.left}>
               <h1 className="title" style={styles.leftTitle}>Resume Builder</h1>
