@@ -7,7 +7,10 @@ type User {
   username: String
   email: String
   password: String
-  resumes: [Resume]
+  resume: Resume
+  education: [Education]
+  experiences: [Experience]
+  projects: [Project]
 }
 
 type Resume {
@@ -22,9 +25,6 @@ type Resume {
   phoneNumber: String
   summary: String
   skills: [String]
-  eduSection: [Project]
-  expSection: [Experience]
-  ProjSection: [Education]
 }
 
 input ResumeInput {
@@ -33,12 +33,11 @@ input ResumeInput {
   state: String
   address: String
   zip: String
+  linkedIn: String
+  github: String
   phoneNumber: String
   summary: String
   skills: [String]
-  eduSection: [ProjectInput]
-  expSection: [ExperienceInput]
-  ProjSection: [EducationInput]
 }
 
 type Project {
@@ -76,7 +75,6 @@ input ExperienceInput {
 }
 
 type Education {
-
   title: String
   date: String
   bPoints: [String]
@@ -104,7 +102,7 @@ input EducationInput {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, phoneNumber: String!, summary: String!): User
+    createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, linkedIn: String, github: String, phoneNumber: String!, summary: String!): Resume
     addResume(resumeData: ResumeInput): User
     createExp(title: String!, role: String!, date: String!, location: String!, description: String!, keyAchievement: String!): Resume
     createEd(title: String!, date: String!, bPoints: [String], description: String!): Resume
