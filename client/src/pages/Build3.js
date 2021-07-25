@@ -1,18 +1,38 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
+import { ADD_Exp } from '../utils/mutations';
 
 const Build3 = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    company: '',
+    role: '',
+    location: '',
+    date: '',
+    description: '',
+    achievemnet: ''
+  });
+  const [addExp, { error, data }] = useMutation(ADD_Exp);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
     console.log(target.name);
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
+    e.preventDefault();
+    console.log(form);
+
+    try {
+      const { data } = await addExp({
+        variables: { ...form },
+      });
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const handleSubmit = (e) => {

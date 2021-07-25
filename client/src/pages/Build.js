@@ -1,22 +1,45 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
+import { ADD_RESUME } from '../utils/mutations';
 
 const Build = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    github: '',
+    linkedin: '',
+    address: '',
+    state: '',
+    zipcode: '',
+    summary: '',
+    skills: '',
+  });
+  const [addResume, { error, data }] = useMutation(ADD_RESUME);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
     console.log(target.name);
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
+    e.preventDefault();
+    console.log(form);
+
+    try {
+      const { data } = await addResume({
+        variables: { ...form },
+      });
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
+  const handleSubmit = async (e) => {
 
     if (!form.name || !validateEmail(form.email)) {
       setErrorMessage('Email or username is invalid');
