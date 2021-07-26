@@ -10,51 +10,43 @@ const Header = () => {
     Auth.logout();
   };
 
-const renderCreate = () => {
-  if (Auth.loggedIn()) {
-    return (
-      <Link className="navbar-item" to="/Build">
-        Create
-      </Link>
-    );
+  function toggleBurgerMenu() {
+    document.querySelector('.navbar-menu').classList.toggle('is-active');
   }
-}
+
+  const renderCreate = () => {
+    if (Auth.loggedIn()) {
+      return (
+        <Link className="navbar-item" to="/Build">
+          Create
+        </Link>
+      );
+    }
+  }
 
   const renderControls = () => {
     // If logged in show logout controls
     if (Auth.loggedIn()) {
       return (
         <>
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <Link className="button is-primary" to="/me">
-                  {Auth.getProfile().data.username}'s profile
-                </Link>
-                <Link className="button is-light" onClick={logout}>
-                  Logout
-                </Link>
-              </div>
-            </div>
-          </div>
+          <Link className="button is-primary" to="/me">
+            {Auth.getProfile().data.username}'s profile
+          </Link>
+          <Link className="button is-light" onClick={logout}>
+            Logout
+          </Link>
         </>
       );
     }
     // If logged out show login controls
     return (
       <>
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              <Link className="button is-primary" to="/signup">
-                <strong>Sign up</strong>
-              </Link>
-              <Link className="button is-light" to="/login">
-                Log in
-              </Link>
-            </div>
-          </div>
-        </div>
+        <Link className="button is-primary" to="/signup">
+          <strong>Sign up</strong>
+        </Link>
+        <Link className="button is-light" to="/login">
+          Log in
+        </Link>
       </>
     )
   };
@@ -68,7 +60,7 @@ const renderCreate = () => {
               <i className="fas fa-file-alt" width="112" height="28"></i>
             </Link>
 
-            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={toggleBurgerMenu}>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -102,14 +94,20 @@ const renderCreate = () => {
                 </div>
               </div>
             </div>
-          </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                {renderControls()}
+                <div className="navbar-end">
+                  <div className="navbar-item">
+                    <div className="buttons">
+                      {renderControls()}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
           </div>
         </nav>
       </div>

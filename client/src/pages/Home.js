@@ -5,13 +5,8 @@ import { useQuery } from '@apollo/client';
 import './Home.css';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
 
   const renderControls = () => {
     // If logged in show logout controls
@@ -22,6 +17,7 @@ const Home = () => {
         </>
       );
     }
+
     // If logged out show login controls
     return (
       <>
@@ -75,6 +71,7 @@ const Home = () => {
           <div className="container">
             <div className="columns">
               <div className="column is-6 is-offset-6">
+
                 <div className="cardstyle">
                   <h1 className="title is-1">Amet Consectetur</h1>
                   <hr className="content-divider" />
@@ -88,7 +85,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };

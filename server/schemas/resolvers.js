@@ -46,10 +46,11 @@ const resolvers = {
       const newResume = await Resume.create(args);
       return newResume;
     },
-    addResume: async (_, { resumeData }, context) => {
+    addResume: async (_, args, context) => {
+      console.log(args);
       const updateUser = await User.findByIdAndUpdate(
-        { _id: context.user._id },
-        { $push: { resume: resumeData } },
+        { _id: args.userId },
+        { $push: { resume: args.resumeData } },
         { new: true }
       );
       return updateUser;
@@ -66,26 +67,27 @@ const resolvers = {
       const newProject = await Project.create(args);
       return newProject;
     },
-    addExp: async (_, { expData }, context) => {
-      const updateResume = await Resume.findOneAndUpdate(
-        { _id: context.resume._id },
-        { $push: { expSection: expData } },
+    addExp: async (_, args, context) => {
+      console.log(args.expData);
+      const updateResume = await User.findByIdAndUpdate(
+        { _id: args.userId },
+        { $push: { experience: args.expData } },
         { new: true }
       );
       return updateResume;
     },
-    addEducation: async (_, { educationData }, context) => {
-      const updateResume = await Resume.findOneAndUpdate(
-        { _id: context.resume._id },
-        { $push: { eduSection: educationData } },
+    addEducation: async (_, args, context) => {
+      const updateResume = await User.findByIdAndUpdate(
+        { _id: args.userId },
+        { $push: { education: args.educationData } },
         { new: true }
       );
       return updateResume;
     },
-    addProject: async (_, { projectData }, context) => {
-      const updateResume = await Resume.findOneAndUpdate(
-        { _id: context.resume._id },
-        { $push: { projSection: projectData } },
+    addProject: async (_, args, context) => {
+      const updateResume = await User.findByIdAndUpdate(
+        { _id: args.userId },
+        { $push: { project: args.projectData } },
         { new: true }
       );
       return updateResume;

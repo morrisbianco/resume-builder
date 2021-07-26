@@ -22,16 +22,16 @@ const Build4 = () => {
   const handleSubmit = async (e) => {
     // e.preventDefault();
 
-    // if (!form.name || !validateEmail(form.email)) {
-    //   setErrorMessage('Email or username is invalid');
-    //   return;
-    // }
-    // if (!form.summary || !checkIfValid(form.summary)) {
-    //   setErrorMessage(
-    //     `Please include a message`
-    //     );
-    //     return;
-    //   }
+    if (!form.name || !validateEmail(form.email)) {
+      setErrorMessage('Email or username is invalid');
+      return;
+    }
+    if (!form.summary || !checkIfValid(form.summary)) {
+      setErrorMessage(
+        `Please include a message`
+        );
+        return;
+      }
     alert(`success`);
     console.log(form);
     try {
