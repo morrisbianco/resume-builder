@@ -17,13 +17,10 @@ const Build2 = () => {
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
     e.preventDefault();
-
-
   };
 
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
 
     // if (!form.name || !validateEmail(form.email)) {
     //   setErrorMessage('Email or username is invalid');
