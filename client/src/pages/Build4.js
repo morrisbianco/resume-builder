@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import { CREATE_Project } from '../utils/mutations';
-
+import './builds.css';
 const Build4 = () => {
   const [form, setForm] = useState({});
   const [createProject, { error, data }] = useMutation(CREATE_Project);
@@ -47,39 +47,41 @@ const Build4 = () => {
 
 
   return (
-    <div>
-      {errorMessage && (
-        <div>
-          <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
-        </div>
-      )}
-      <form className="form">
+    <div class="container">
+      <div>
+        {errorMessage && (
+          <div>
+            <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
+          </div>
+        )}
+        <form className="form fullBuild4">
 
-        <div className="field pt-5 mx-5 px-5">
-          <h3>Projects</h3>
-          <label className="label">Title:</label>
-          <div className="control">
-            <input className="input" type="text" name="title" value={form.title} onChange={handleInputChange} placeholder="Project Title" />
+          <div className="field pt-5 mx-5 px-5">
+            <h3>Projects</h3>
+            <label className="label">Title:</label>
+            <div className="control">
+              <input className="input" type="text" name="title" value={form.title} onChange={handleInputChange} placeholder="Project Title" />
+            </div>
+            <label className="label">Link:</label>
+            <div className="control">
+              <input className="input" type="text" name="link" value={form.link} onChange={handleInputChange} placeholder="Link to Website" />
+            </div>
+            <label className="label">Bullet Points:</label>
+            <div className="control">
+              <input className="input" type="text" name="points" value={form.points} onChange={handleInputChange} placeholder="Describe Aspects" />
+            </div>
+            <label className="label">Tools Used:</label>
+            <div className="control">
+              <input className="input" type="text" name="tools" value={form.tools} onChange={handleInputChange} placeholder="resume, speaking, writing" />
+            </div>
           </div>
-          <label className="label">Link:</label>
-          <div className="control">
-            <input className="input" type="text" name="link" value={form.link} onChange={handleInputChange} placeholder="Link to Website" />
+          <div className="has-text-right">
+            <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/me">
+              Submit
+            </Link>
           </div>
-          <label className="label">Bullet Points:</label>
-          <div className="control">
-            <input className="input" type="text" name="points" value={form.points} onChange={handleInputChange} placeholder="Describe Aspects" />
-          </div>
-          <label className="label">Tools Used:</label>
-          <div className="control">
-            <input className="input" type="text" name="tools" value={form.tools} onChange={handleInputChange} placeholder="resume, speaking, writing" />
-          </div>
-        </div>
-        <div className="has-text-right">
-          <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/me">
-            Submit
-          </Link>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

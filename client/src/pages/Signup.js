@@ -40,8 +40,8 @@ const Signup = () => {
 
   return (
     <section className="">
-      <div className="columns is-multiline">
-        <div className="column is-6 is-offset-3 register">
+      <div className="columns fullSignup is-multiline">
+        <div className="column is-8 is-offset-2 register">
           <div className="columns">
             <div className="column left">
               <h1 className="title">Resume Builder</h1>

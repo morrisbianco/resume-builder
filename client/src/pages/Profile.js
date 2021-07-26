@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
-
+import './profile.css'
 const Profile = () => {
   const { id } = useParams();
 
@@ -35,7 +35,7 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
+      <h4 className="fullprofile">
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>

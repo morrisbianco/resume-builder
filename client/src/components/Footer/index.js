@@ -7,7 +7,7 @@ const Footer = () => {
   const location = useLocation();
   const history = useHistory();
   return (
-    <footer className=" bottom">
+    <footer className="bottom">
       <div className="content has-text-centered">
         <div className="container text-center mb-5">
           {location.pathname !== '/' && (
