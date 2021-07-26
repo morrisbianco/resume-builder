@@ -22,19 +22,21 @@ const Build = () => {
       setErrorMessage('Email or username is invalid');
       return;
     }
+
     if (!form.summary || !checkIfValid(form.summary)) {
       setErrorMessage(
         `Please include a message`
       );
       return;
     }
+  
     alert(`Hello ${form.name}`);
 
     setForm({});
   };
 
-
   return (
+    <div className= "container">
     <div>
       {errorMessage && (
         <div>
@@ -120,6 +122,7 @@ const Build = () => {
         </div>
       </form>
     </div>
+      </div>
   );
 };
 
