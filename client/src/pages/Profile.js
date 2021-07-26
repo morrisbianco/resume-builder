@@ -6,8 +6,7 @@ import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
-import './profile.css'
-import { QUERY_ME } from '../utils/queries';
+import './profile.css';
 
 const Profile = () => {
   const { loading, data, error } = useQuery(QUERY_ME);
