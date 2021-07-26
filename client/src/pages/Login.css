@@ -1,5 +1,5 @@
 input::placeholder {
-  color: black !important;
+  color: rgb(105, 105, 105) !important;
 }
 
 .hero {
@@ -7,7 +7,7 @@ input::placeholder {
 }
 
 input {
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
 }
 
@@ -19,7 +19,12 @@ body {
   transition: 100ms;
   background: rgb(240 240 240);
   color: hsla(0 0% 0% 0.66);
-  font-family: arial;
+  
+}
+
+.fullLogin {
+margin-bottom: 30vh !important;
+
 }
 
 .register {
@@ -39,9 +44,9 @@ body {
 }
 
 .left, .title {
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -2px;
-  font-family: arial;
+  
 }
 
 .left, p {
@@ -52,7 +57,7 @@ body {
 .right, .title {
   font-weight: 800;
   letter-spacing: -1px;
-  font-family: arial;
+  
 }
 
 .right, .description {

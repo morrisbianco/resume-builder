@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validatePhone } from '../utils/helpers';
 import { CREATE_RESUME } from '../utils/mutations';
-
+import './builds.css';
 const Build = () => {
   const [form, setForm] = useState({});
   const [createResume, { error, data }] = useMutation(CREATE_RESUME);

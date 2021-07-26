@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { CREATE_Ed } from '../utils/mutations';
-
+import './builds.css';
 const Build2 = () => {
   const [form, setForm] = useState({});
   const [createEducation, { error, data }] = useMutation(CREATE_Ed);
@@ -48,13 +48,14 @@ const Build2 = () => {
 
 
   return (
+    <div class="container">
     <div>
       {errorMessage && (
         <div>
           <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
         </div>
       )}
-      <form className="form">
+      <form className="form fullBuild2">
 
         <div className="field pt-5 mx-5 px-5">
           <h3>Education</h3>
@@ -82,6 +83,9 @@ const Build2 = () => {
           </Link>
         </div>
       </form>
+    </div>
+
+
     </div>
   );
 };

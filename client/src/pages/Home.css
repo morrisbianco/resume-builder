@@ -13,11 +13,17 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.cardstyle {
+background: rgba(0, 0, 0, 0.158);
+padding: 10px;
+border-radius: 20px;
+}
+
 .title {
   color: white;
   font-weight: 800;
   font-size: 4rem;
-  font-family: Arial;
+
   text-shadow: 1px 1px 1px #000 3px 3px 5px rgb(0 0 3);
 }
 
@@ -28,7 +34,7 @@ body {
 }
 
 .content-divider {
-  background: grey;
+  background: rgb(255, 255, 255);
  }
 
 .btnGo {

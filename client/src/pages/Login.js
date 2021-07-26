@@ -42,7 +42,7 @@ const Login = (props) => {
 
   return (
 
-    <div className="columns is-multiline" >
+    <div className="columns fullLogin is-multiline" >
       <div className="column is-6 is-offset-3 register" >
         <div className="columns">
           <div className="column left" >
@@ -94,6 +94,8 @@ const Login = (props) => {
         </div>
       </div>
     </div>
+
+
 
   );
 };
