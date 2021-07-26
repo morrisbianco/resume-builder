@@ -10,3 +10,8 @@ export function checkIfValid(input) {
   }
   return true;
 }
+
+export function validatePhone(phoneNumber) {
+  const re = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+  return re.test(String(phoneNumber).toLowerCase());
+}

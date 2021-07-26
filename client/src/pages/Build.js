@@ -1,13 +1,13 @@
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { checkIfValid, validateEmail } from '../utils/helpers';
+import { checkIfValid, validatePhone } from '../utils/helpers';
 import { CREATE_RESUME } from '../utils/mutations';
 
 const Build = () => {
   const [form, setForm] = useState({});
   const [createResume, { error, data }] = useMutation(CREATE_RESUME);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, alert] = useState('');
 
   const handleInputChange = async (e) => {
     const { target } = e;
@@ -17,26 +17,62 @@ const Build = () => {
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
     e.preventDefault();
-
-
   };
 
   const handleSubmit = async (e) => {
 
+    if (!form.name || !checkIfValid(form.name)) {
+      alert('Username is invalid');
+      return;
+    }
 
-    if (!form.name || !validateEmail(form.email)) {
-      setErrorMessage('Email or username is invalid');
+    if (!form.phoneNumber || !validatePhone(form.phoneNumber)) {
+      alert('Phone Number is invalid');
       return;
     }
 
     if (!form.summary || !checkIfValid(form.summary)) {
-      setErrorMessage(
+      alert(
+        `Please include a message`
+      );
+      return;
+    }
+
+    if (!form.skills || !checkIfValid(form.skills)) {
+      alert(
+        `Please include a list of skills`
+      );
+      return;
+    }
+
+    if (!form.address || !checkIfValid(form.address)) {
+      alert(
+        `Please include an Address`
+      );
+      return;
+    }
+
+    if (!form.city || !checkIfValid(form.city)) {
+      alert(
+        `Please include a message`
+      );
+      return;
+    }
+
+    if (!form.state || !checkIfValid(form.state)) {
+      alert(
+        `Please include a message`
+      );
+      return;
+    }
+
+    if (!form.zip || !checkIfValid(form.zip)) {
+      alert(
         `Please include a message`
       );
       return;
     }
   
-    alert(`Hello ${form.name}`);
     try {
       const { data } = await createResume({
         variables: { ...form },
@@ -66,13 +102,6 @@ const Build = () => {
         </div>
 
         <div className="field pt-5 mx-5 px-5">
-          <label className="label">City:</label>
-          <div className="control">
-            <input className="input" type="text" name="city" value={form.city} onChange={handleInputChange} placeholder="resume@email.com" />
-          </div>
-        </div>
-
-        <div className="field pt-5 mx-5 px-5">
           <label className="label">Phone:</label>
           <div className="control">
             <input className="input" type="text" name="phoneNumber" value={form.phoneNumber} onChange={handleInputChange} placeholder="1234567890" />
@@ -97,6 +126,13 @@ const Build = () => {
           <label className="label">Address:</label>
           <div className="control">
             <input className="input" type="text" name="address" value={form.address} onChange={handleInputChange} placeholder="1234 Resume St" />
+          </div>
+        </div>
+
+        <div className="field pt-5 mx-5 px-5">
+          <label className="label">City:</label>
+          <div className="control">
+            <input className="input" type="text" name="city" value={form.city} onChange={handleInputChange} placeholder="resume@email.com" />
           </div>
         </div>
 
