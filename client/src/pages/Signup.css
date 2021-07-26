@@ -1,0 +1,66 @@
+input::placeholder {
+  color: black !important;
+}
+
+.hero {
+  background: linear-gradient(to right #1d4568 #000428);
+}
+
+input {
+  color: black;
+  font-size: 1rem;
+}
+
+.underscore {
+  text-decoration: underline
+}
+
+body {
+  background: rgb(240 240 240);
+  color: hsla(0 0% 0% 0.66);
+  font-family: arial;
+}
+
+.register {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.left {
+  padding: 4.5rem;
+  border-right: 5px solid rgb(240 240 240);
+}
+
+.right {
+  padding: 4.5rem;
+}
+
+.left, .title {
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-family: arial;
+}
+
+.left, p {
+  color: hsla(0 0% 0% 0.33);
+  font-size: 1.15rem;
+}
+
+.right, .title {
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-family: arial;
+}
+
+.right, .description {
+  
+  margin-bottom: 1rem;
+  color: hsla(0 0% 0% 0.33);
+  font-size: 1.15rem;
+}
+
+.right, small {
+  color: hsla(0 0% 0% 0.33);
+}
