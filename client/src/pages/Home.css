@@ -1,0 +1,74 @@
+body {
+  transition: 100ms;
+  background: var(--main-color);
+  color: var(--white-text);
+}
+
+.hero, .cta {
+  background: #000428;
+  /* fallback for old browsers */
+  background: var(--main-color);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--main-color);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  font-size: 4rem;
+  font-family: Arial;
+  text-shadow: 1px 1px 1px #000 3px 3px 5px rgb(0 0 3);
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 2px #000 1px 1px 1px rgb(0 0 0);
+}
+
+.content-divider {
+  background: grey;
+ }
+
+.btnGo {
+  font-size: 20px;
+  background: black;
+  color: white;
+  border: transparent 1px;
+}
+
+#parallax-1 {
+  background: url(https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#parallax-2 {
+  background: url(https://images.pexels.com/photos/5673502/pexels-photo-5673502.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 8px solid black;
+}
+
+#parallax-3 {
+  background: url(https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 8px solid black;
+}
+
+hr {
+  background: grey;
+}
+
+label {
+  color: black;
+}
+

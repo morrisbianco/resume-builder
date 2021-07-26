@@ -19,12 +19,6 @@ import Build2 from './pages/Build2';
 import Build3 from './pages/Build3';
 import Build4 from './pages/Build4';
 
-const styles = {
-  body: {
-    transition: '100ms',
-  }
-};
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,7 +47,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh" style={styles.body}>
+        <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div>
             <Route exact path="/">
