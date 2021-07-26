@@ -34,13 +34,13 @@ const userSchema = new Schema({
       ref: "Education"
     }
   ],
-  experiences: [
+  experience: [
     {
       type: Schema.Types.ObjectId,
       ref: "Experience"
     }
   ],
-  projects: [
+  project: [
     {
       type: Schema.Types.ObjectId,
       ref: "Project"

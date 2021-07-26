@@ -22,6 +22,7 @@ const Home = () => {
         </>
       );
     }
+
     // If logged out show login controls
     return (
       <>
@@ -81,10 +82,8 @@ const Home = () => {
             <Link href="#" className="button is-white is-inverted">Next&ensp;<i className="fas fa-angle-double-right"></i></Link>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
- 
+      </section>
+
     </>
   );
 };
