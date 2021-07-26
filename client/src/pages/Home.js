@@ -5,13 +5,8 @@ import { useQuery } from '@apollo/client';
 import './Home.css';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
 
   const renderControls = () => {
     // If logged in show logout controls
