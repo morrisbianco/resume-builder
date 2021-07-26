@@ -1,22 +1,28 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
+import { CREATE_RESUME } from '../utils/mutations';
 
 const Build = () => {
   const [form, setForm] = useState({});
+  const [createResume, { error, data }] = useMutation(CREATE_RESUME);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
     console.log(target.name);
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
+    e.preventDefault();
+
+
   };
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
+  const handleSubmit = async (e) => {
+
 
     if (!form.name || !validateEmail(form.email)) {
       setErrorMessage('Email or username is invalid');
@@ -31,6 +37,13 @@ const Build = () => {
     }
   
     alert(`Hello ${form.name}`);
+    try {
+      const { data } = await createResume({
+        variables: { ...form },
+      });
+    } catch (e) {
+      console.error(e);
+    }
 
     setForm({});
   };
@@ -53,16 +66,16 @@ const Build = () => {
         </div>
 
         <div className="field pt-5 mx-5 px-5">
-          <label className="label">E-mail Address:</label>
+          <label className="label">City:</label>
           <div className="control">
-            <input className="input" type="email" name="email" value={form.email} onChange={handleInputChange} placeholder="resume@email.com" />
+            <input className="input" type="text" name="city" value={form.city} onChange={handleInputChange} placeholder="resume@email.com" />
           </div>
         </div>
 
         <div className="field pt-5 mx-5 px-5">
           <label className="label">Phone:</label>
           <div className="control">
-            <input className="input" type="text" name="phone" value={form.phone} onChange={handleInputChange} placeholder="1234567890" />
+            <input className="input" type="text" name="phoneNumber" value={form.phoneNumber} onChange={handleInputChange} placeholder="1234567890" />
           </div>
         </div>
 
@@ -76,7 +89,7 @@ const Build = () => {
         <div className="field pt-5 mx-5 px-5">
           <label className="label">Linkedin:</label>
           <div className="control">
-            <input className="input" type="text" name="linkedin" value={form.linkedin} onChange={handleInputChange} placeholder="Profile Link" />
+            <input className="input" type="text" name="linkedIn" value={form.linkedIn} onChange={handleInputChange} placeholder="Profile Link" />
           </div>
         </div>
 
@@ -97,7 +110,7 @@ const Build = () => {
         <div className="field pt-5 mx-5 px-5">
           <label className="label">Zip Code:</label>
           <div className="control">
-            <input className="input" type="text" name="zipcode" value={form.zipcode} onChange={handleInputChange} placeholder="12345" />
+            <input className="input" type="text" name="zip" value={form.zip} onChange={handleInputChange} placeholder="12345" />
           </div>
         </div>
 

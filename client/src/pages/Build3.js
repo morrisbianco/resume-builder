@@ -1,34 +1,48 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
+import { CREATE_EXP } from '../utils/mutations';
 
 const Build3 = () => {
   const [form, setForm] = useState({});
+  const [createExp, { error, data }] = useMutation(CREATE_EXP);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
     console.log(target.name);
 
     setForm(form => ({ ...form, [inputType]: inputValue }));
+    e.preventDefault();
+
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // e.preventDefault();
 
-    if (!form.name || !validateEmail(form.email)) {
-      setErrorMessage('Email or username is invalid');
-      return;
+    // if (!form.name || !validateEmail(form.email)) {
+    //   setErrorMessage('Email or username is invalid');
+    //   return;
+    // }
+    // if (!form.summary || !checkIfValid(form.summary)) {
+    //   setErrorMessage(
+    //     `Please include a message`
+    //   );
+    //   return;
+    // }
+    alert(`success`);
+
+    try {
+      console.log(form);
+      const { data } = await createExp({
+        variables: { ...form },
+      });
+    } catch (e) {
+      console.error(e);
     }
-    if (!form.summary || !checkIfValid(form.summary)) {
-      setErrorMessage(
-        `Please include a message`
-      );
-      return;
-    }
-    alert(`Hello ${form.name}`);
 
     setForm({});
   };
@@ -67,7 +81,7 @@ const Build3 = () => {
           </div>
           <label className="label">Key Achievements:</label>
           <div className="control">
-            <input className="input" type="text" name="achievemnet" value={form.achievemnet} onChange={handleInputChange} placeholder="resume, speaking, writing" />
+            <input className="input" type="text" name="keyAchievements" value={form.keyAchievements} onChange={handleInputChange} placeholder="resume, speaking, writing" />
           </div>
         </div>
 

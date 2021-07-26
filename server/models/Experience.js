@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const expSchema = new Schema({
-  title: {
+  company: {
     type: String,
     required: true,
   },
@@ -22,11 +21,9 @@ const expSchema = new Schema({
     type: String,
     required: true,
   },
-  keyAchievements: [
-    {
-      type: String,
-    }
-  ]
+  keyAchievements: {
+    type: String,
+  }
 });
 
 const Experience = model('Experience', expSchema);

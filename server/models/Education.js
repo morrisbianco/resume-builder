@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const eduSchema = new Schema({
-  title: {
+  school: {
     type: String,
     required: true,
   },
@@ -10,11 +9,9 @@ const eduSchema = new Schema({
     type: String,
     required: true,
   },
-  bPoints: [
-    {
-      type: String,
-    }
-  ],
+  location: {
+    type: String,
+  },
   description: {
     type: String,
   }

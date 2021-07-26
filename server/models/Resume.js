@@ -1,7 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Education = require('./Education');
-const Experience = require('./Experience');
-const Project = require('./Project');
 
 const resumeSchema = new Schema({
   name: {
@@ -43,24 +40,6 @@ const resumeSchema = new Schema({
     {
       type: String,
       trim: true,
-    }
-  ],
-  eduSection: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Education"
-    }
-  ],
-  expSection: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Experience"
-    }
-  ],
-  ProjSection: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Project"
     }
   ]
 });

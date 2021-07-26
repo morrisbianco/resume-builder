@@ -25,12 +25,9 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_RESUME = gql`
-  mutation createResume($name: String!, $city: String!, $state: String!, $address: String!, $zip: String!, $linkedIn: String, $github: String, $phoneNumber: String!, $summary: String!) {
-    createResume(name: $name, city: $city, state: $state, address: $address, zip: $zip, linkedIn: $linkedIn, github: $github, phoneNumber: $phoneNumber, summary: $summary) {
-      user {
-        _id
-        username
-      }
+  mutation createResume($name: String!, $city: String!, $state: String!, $address: String!, $zip: String!, $linkedIn: String, $github: String, $phoneNumber: String!, $summary: String!, $skills: [String]) {
+    createResume(name: $name, city: $city, state: $state, address: $address, zip: $zip, linkedIn: $linkedIn, github: $github, phoneNumber: $phoneNumber, summary: $summary, skills: $skills) {
+      _id
     }
   }
 `;
@@ -45,28 +42,25 @@ export const ADD_RESUME = gql`
 `;
 
 export const CREATE_EXP = gql`
-  mutation createExp($title: String!, $role: String!, $date: String!, $location: String!, $description: String!, $keyAchievement: String!) {
-    createExp(title: $title, role: $role, date: $date, location: $location, description: $description, keyAchievement: $keyAchievement) {
-      _id
-      username
+  mutation createExp($company: String!, $role: String!, $date: String!, $location: String!, $description: String!, $keyAchievements: String) {
+    createExp(company: $company, role: $role, date: $date, location: $location, description: $description, keyAchievements: $keyAchievements) {
+      company
     }
   }
 `;
 
 export const CREATE_Ed = gql`
-  mutation createEd($title: String!, $date: String!, $bPoints: [String], $description: String!) {
-    createEd(title: $title, date: $date, bPoints: $bPoints, description: $description) {
-      _id
-      username
+  mutation createEd($school: String!, $date: String!, $location: String, $description: String!) {
+    createEd(school: $school, date: $date, location: $location, description: $description) {
+      school
     }
   }
 `;
 
 export const CREATE_Project = gql`
-  mutation createProject($title: String!, $link: String!, $bPoints: [String], $tools: [String]) {
-    createProject(title: $title, link: $link, bPoints: $bPoints, tools: $tools) {
-      _id
-      username
+  mutation createProject($title: String!, $link: String!, $points: String, $tools: String) {
+    createProject(title: $title, link: $link, points: $points, tools: $tools) {
+      title
     }
   }
 `;
