@@ -28,6 +28,7 @@ type Resume {
 }
 
 input ResumeInput {
+  _id: ID!
   name: String
   city: String
   state: String
@@ -41,6 +42,7 @@ input ResumeInput {
 }
 
 type Project {
+  _id: ID!
   title: String!
   link: String!
   points: String
@@ -49,6 +51,7 @@ type Project {
 
 
 input ProjectInput {
+  _id: ID!
   title: String!
   link: String!
   points: String
@@ -57,6 +60,7 @@ input ProjectInput {
 
 
 type Experience {
+  _id: ID!
   company: String!
   role: String!
   date: String!
@@ -66,6 +70,7 @@ type Experience {
 }
 
 input ExperienceInput {
+  _id: ID!
   company: String!
   role: String!
   date: String!
@@ -75,15 +80,17 @@ input ExperienceInput {
 }
 
 type Education {
-  school: String
-  date: String
+  _id: ID!
+  school: String!
+  date: String!
   location: String
   description: String
 }
 
 input EducationInput {
-  school: String
-  date: String
+  _id: ID!
+  school: String!
+  date: String!
   location: String
   description: String
 }
@@ -103,13 +110,13 @@ input EducationInput {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, linkedIn: String, github: String, phoneNumber: String!, summary: String!, skills: [String]): Resume
-    addResume(resumeData: ResumeInput): User
+    addResume(userId: ID!, resumeData: ResumeInput): Resume
     createExp(company: String!, role: String!, date: String!, location: String!, description: String!, keyAchievements: String): Experience
     createEd(school: String!, date: String!, location: String, description: String!): Education
     createProject(title: String!, link: String!, points: String, tools: String): Project
-    addExp(expData: ExperienceInput): Resume
-    addEducation(educationData: EducationInput): Resume
-    addProject(projectData: ProjectInput): Resume
+    addExp(userId: ID!, expData: ExperienceInput): Experience
+    addEducation(userId: ID!, educationData: EducationInput): User
+    addProject(userId: ID!, projectData: ProjectInput): User
   }
 `;
 

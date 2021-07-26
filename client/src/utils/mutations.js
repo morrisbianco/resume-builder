@@ -33,9 +33,8 @@ export const CREATE_RESUME = gql`
 `;
 
 export const ADD_RESUME = gql`
-  mutation addResume($resumeData: resumeInput!) {
-    addResume(resumeData: $resumeData) {
-      _id
+  mutation addResume($userId: ID!, $resumeData: resumeInput!) {
+    addResume(userId: $userId, resumeData: $resumeData) {
       username
     }
   }
@@ -66,26 +65,24 @@ export const CREATE_Project = gql`
 `;
 
 export const ADD_Exp = gql`
-  mutation addExp($expData: ExperienceInput!) {
-    addExp(expData: $expData) {
+  mutation addExp($userId: ID!, $expData: ExperienceInput!) {
+    addExp(userId: $userId, expData: $expData) {
       _id
-      username
     }
   }
 `;
 
 export const ADD_Education = gql`
-  mutation addEducation($educationData: EducationInput!) {
-    addEducation(educationData: $educationData) {
+  mutation addEducation($userId: ID!, $educationData: EducationInput!) {
+    addEducation(userId: $userId, educationData: $educationData) {
       _id
-      username
     }
   }
 `;
 
 export const ADD_Project = gql`
-  mutation addProject($projectData: projectInput!) {
-    addProject(projectData: $projectData) {
+  mutation addProject($userId: ID!, $projectData: projectInput!) {
+    addProject(userId: $userId, projectData: $projectData) {
       _id
       username
     }
