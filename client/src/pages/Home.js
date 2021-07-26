@@ -75,18 +75,22 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const users = data?.users || [];
 
-  const renderUserList = () => {
-    if (loading) {
-      return <h2>Loading...</h2>
-    } else {
-      return <UserList users={users} title="List of Resumes" />
+  const renderControls = () => {
+    // If logged in show logout controls
+    if (Auth.loggedIn()) {
+      return (
+        <>
+          <Link to="/Build" className="button is-white is-inverted">Create a Resume&ensp;<i className="fas fa-angle-double-right"></i></Link>
+        </>
+      );
     }
-  } 
-
-  const renderUsername = () => {
-    if (!Auth.loggedIn()) return null;
-    return Auth.getProfile().data.username;
-  }
+    // If logged out show login controls
+    return (
+      <>
+        <p>Please Login to Create a Resume</p>
+      </>
+    )
+  };
 
   return (
     <>
@@ -102,7 +106,7 @@ const Home = () => {
             <h2 className="subtitle" style={styles.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum adipisci, dolores deserunt
               velit magnam aliquam quia incidunt aspernatur ducimus omnis officiis commodi porro dolor possimus. Natus
               omnis cum delectus odit?</h2>
-            <Link to="/Build" className="button btnGo" style={styles.btnGo}>Create a Resume&ensp;</Link>
+              <Link to="/Build" className="button btnGo" style={styles.btnGo}>View Template&ensp;</Link>
           </div>
         </div>
       </div>
@@ -119,7 +123,7 @@ const Home = () => {
             <h2 className="subtitle" style={styles.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod non odit beatae! Hic
               dignissimos incidunt ea eius doloremque quos corrupti fugiat architecto alias consequatur neque nemo,
               beatae nisi eaque nesciunt!.</h2>
-            <Link to="/Build" className="button is-white is-inverted">Create a Resume&ensp;<i className="fas fa-angle-double-right"></i></Link>
+            {renderControls()}
           </div>
         </div>
       </div>

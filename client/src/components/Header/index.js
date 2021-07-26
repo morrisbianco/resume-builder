@@ -23,6 +23,16 @@ const Header = () => {
     Auth.logout();
   };
 
+const renderCreate = () => {
+  if (Auth.loggedIn()) {
+    return (
+      <Link className="navbar-item" to="/Build">
+        Create
+      </Link>
+    );
+  }
+}
+
   const renderControls = () => {
     // If logged in show logout controls
     if (Auth.loggedIn()) {
@@ -85,7 +95,7 @@ const Header = () => {
               </Link>
 
               <a className="navbar-item">
-                Documentation
+                Template
               </a>
 
               <div className="navbar-item has-dropdown is-hoverable">
@@ -95,13 +105,11 @@ const Header = () => {
 
                 <div className="navbar-dropdown">
                   <Link className="navbar-item" to="/me">
-                    About
+                    Profile
                   </Link>
-                  <a className="navbar-item">
-                    Contact
-                  </a>
+                  {renderCreate()}
                   <hr className="navbar-divider"></hr>
-                  <a className="navbar-item">
+                  <a className="navbar-item" href="https://github.com/morrisbianco/resume-builder/issues" target="_blank">
                     Report an issue
                   </a>
                 </div>
