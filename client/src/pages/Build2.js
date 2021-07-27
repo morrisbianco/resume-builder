@@ -50,38 +50,39 @@ const Build2 = () => {
   return (
     <div class="container contain margin1 has-text-centered">
       <h3>Education</h3>
-    <div>
-      {errorMessage && (
-        <div>
-          <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
-        </div>
-      )}
-      <form className="fullBuild2">
+      <div>
+        {errorMessage && (
+          <div>
+            <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
+          </div>
+        )}
+        <form className="fullBuild2">
 
-        <div className="pt-5 mx-5 px-5">
-          <label className="label">School</label>
-          <div className="control">
-            <input className="input" type="text" name="school" value={form.school} onChange={handleInputChange} placeholder="School of Resume " />
+          <div className="pt-5 mx-5 px-5">
+            <label className="label">School</label>
+            <div className="control">
+              <input className="input" type="text" name="school" value={form.school} onChange={handleInputChange} placeholder="School of Resume " />
+            </div>
+            <label className="label">Location</label>
+            <div className="control">
+              <input className="input" type="text" name="location" value={form.location} onChange={handleInputChange} placeholder="City, State Abreviation" />
+            </div>
+            <label className="label">Completion Date</label>
+            <div className="control">
+              <input className="input" type="text" name="date" value={form.date} onChange={handleInputChange} placeholder="Month, Year" />
+            </div>
+            <label className="label">Description</label>
+            <div className="control">
+              <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
+            </div>
+            <div className="has-text-center">
+              <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build3">
+                Next
+              </Link>
+            </div>
           </div>
-          <label className="label">Location</label>
-          <div className="control">
-            <input className="input" type="text" name="location" value={form.location} onChange={handleInputChange} placeholder="City, State Abreviation" />
-          </div>
-          <label className="label">Completion Date</label>
-          <div className="control">
-            <input className="input" type="text" name="date" value={form.date} onChange={handleInputChange} placeholder="Month, Year" />
-          </div>
-          <label className="label">Description</label>
-          <div className="control">
-            <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
-          </div>
-        <div className="has-text-center">
-          <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build3">
-            Next
-          </Link>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
 
 
     </div>
