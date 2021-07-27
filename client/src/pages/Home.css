@@ -1,8 +1,7 @@
 body {
   transition: 100ms;
   background-color: #0cbaba;
-background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%) !important;
-
+  background-image: linear-gradient(315deg, #af8c9d 0%, #8cacac 74%);
 }
 
 .hero, .cta {

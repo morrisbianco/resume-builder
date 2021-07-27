@@ -77,7 +77,7 @@ const Build2 = () => {
           </div>
         </div>
 
-        <div className="has-text-right">
+        <div className="has-text-center">
           <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build3">
             Next
           </Link>

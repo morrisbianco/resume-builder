@@ -49,7 +49,7 @@ const Build3 = () => {
 
 
   return (
-    <div class="container">
+    <div class="container build-spacer3">
       <div>
         {errorMessage && (
           <div>
@@ -86,7 +86,7 @@ const Build3 = () => {
             </div>
           </div>
 
-          <div className="has-text-right">
+          <div className="has-text-center">
             <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build4">
               Next
             </Link>

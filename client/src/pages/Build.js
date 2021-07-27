@@ -85,7 +85,7 @@ const Build = () => {
   };
 
   return (
-    <div class="container  has-text-centered">
+    <div class="container has-text-centered">
 
 
 
@@ -189,7 +189,7 @@ const Build = () => {
             </div>
           </div>
 
-          <div className="has-text-right">
+          <div className="has-text-center">
             <Link className="button btnG p-5 m-5" onClick={handleSubmit} to="/Build2">
               Next
             </Link>

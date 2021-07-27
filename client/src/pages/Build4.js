@@ -75,7 +75,7 @@ const Build4 = () => {
               <input className="input" type="text" name="tools" value={form.tools} onChange={handleInputChange} placeholder="resume, speaking, writing" />
             </div>
           </div>
-          <div className="has-text-right">
+          <div className="has-text-center">
             <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/me">
               Submit
             </Link>

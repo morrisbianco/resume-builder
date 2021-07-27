@@ -21,16 +21,18 @@ const Profile = () => {
 
   if (!Auth.loggedIn()) {
     return (
-      <h4 className="fullprofile">
-        You need to be logged in to see this. Use the navigation links above to
+      <div className="has-text-centered">
+      <h4 className="fullprofile title mt-6">
+        You need to be logged in to see this page. <br /> Use the navigation links above to
         sign up or log in!
       </h4>
+      </div>
     );
   }
 
   return (
     <div>
-      <div className="flex-row justify-center mb-3">
+      <div className="fullprofile">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {`${user.username}'s`} Resumes.
         </h2>

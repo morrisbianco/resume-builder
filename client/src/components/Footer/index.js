@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bottom">
       <div className="content has-text-centered">
-        <div className="container text-center mb-5">
+        <div className=" text-center mb-5">
           {location.pathname !== '/' && (
             <button
               className="button btnB mb-3"

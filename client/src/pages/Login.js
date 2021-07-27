@@ -42,62 +42,88 @@ const Login = (props) => {
 
   return (
 
-    <div className="columns fullLogin is-multiline" >
-      <div className="column is-6 is-offset-3 register" >
-        <div className="columns">
-          <div className="column left" >
-            <h1 className="title" >Resume Builder</h1>
-            <h2 className="">Login and view your resumes!</h2>
-            <br />
-            <p>With resume builder you can save and store your resumes. The one stop place to build a resume completely free of charge or ads!</p>
-          </div>
-          <div className="column right has-text-centered" >
-            <h1 className="title is-4" >Login & get started!</h1>
-            <p className="description" >Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <div className="field">
-                  <div className="control">
-
-                    <input className="input is-medium" type="email" name="email" placeholder="Email" value={formState.email}
-                      onChange={handleChange} />
-
-                  </div>
-                </div>
-
-                <div className="field">
-                  <div className="control">
-
-                    <input className="input is-medium" type="password" name="password" placeholder="Password" value={formState.password}
-                      onChange={handleChange} />
-
-                  </div>
-                </div>
-                <button className="button is-block is-primary is-fullwidth is-medium">Submit</button>
-                <br />
-                <small ><Link className="underscore" to="/signup" >Create Account</Link></small>
-              </form>
-
-            )}
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-
-                {error.message}
+    <section class="hero is-fullheight">
+    <div class="hero-body has-text-centered">
+      <div class="login">
+        <h1 className="title">Login</h1>
+        {data ? (
+          <p>
+            Success! You may now head{' '}
+            <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <form onSubmit={handleFormSubmit}>
+            <div class="field">
+              <div class="control">
+                <input class="input inputLoginSign is-medium is-rounded" type="email" name="email" onChange={handleChange} value={formState.email} placeholder="hello@example.com" autocomplete="username" required />
               </div>
-            )}
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input inputLoginSign is-medium is-rounded" type="password" name="password" onChange={handleChange} value={formState.password} placeholder="**********" autocomplete="current-password" required />
+              </div>
+            </div>
+            <br />
+            <button class="button is-block is-fullwidth btnSign  is-medium is-rounded" type="submit">
+              Login
+            </button>
+          </form>
+        )}
+        {error && (
+          <div classNameName="my-3 p-3 bg-danger text-white">
+            {error.message}
+          </div>
+        )}
+        <br />
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <div>
+            <a href="#">Don't have an account?</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-
-
-  );
+    // <section class="hero is-fullheight">
+    //   <div class="hero-body has-text-centered">
+        
+    //     <div class="login">
+        
+    //       <h1 className="title">Login</h1>
+         
+    //       <form>
+    //         <div class="field">
+    //           <div class="control">
+    //             <input class="input inputLoginSign is-medium is-rounded" type="email" placeholder="hello@example.com" autocomplete="username" required />
+    //           </div>
+    //         </div>
+    //         <div class="field">
+    //           <div class="control">
+    //             <input class="input inputLoginSign is-medium is-rounded" type="password" placeholder="**********" autocomplete="current-password" required />
+    //           </div>
+    //         </div>
+    //         <br />
+    //         <button class="button is-block btnLogin is-fullwidth is-medium is-rounded" type="submit">
+    //           Login
+    //         </button>
+    //       </form>
+    //       <br />
+          
+    //         <div class="level">
+    //           <div class="level-item has-text-centered">
+    //             <div>
+    //               <a href="#">Don't have an account?</a>
+    //             </div>
+    //           </div>
+    //         </div>
+    //     </div>
+    //     </div>
+        
+    // </section>
+      
+      );
 };
 
-export default Login;
+      export default Login;

@@ -7,7 +7,7 @@
 }
 
 .fullBuild3 {
-  margin-bottom: 40vh !important;
+  margin-bottom: 20vh !important;
 }
 
 .fullBuild4 {
@@ -16,21 +16,26 @@
 
 input {
   max-width: 500px !important;
+  background: rgba(0, 0, 0, 0.541) !important;
+  border:solid 1px rgb(94, 94, 94) !important;
 }
 
-.input, .select select, .textarea {
-color: rgb(0, 0, 0) !important;
+textarea {
+  background: rgba(0, 0, 0, 0.541) !important;
+  border:solid 1px rgb(94, 94, 94) !important;
 }
 
 .btnG {
-  background: rgb(0, 0, 0) !important;
+  background-color: #3bb78f;
+background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
   border: solid rgb(0, 0, 0) 1px !important;
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   transition: 200ms;
 }
 
 .btnG:hover {
-  background: rgb(75, 201, 25) !important;
+  background-color: #3bb78f;
+background-image: linear-gradient(100deg, #3bb78f 0%, #0bab64 74%);
   border: solid rgb(0, 0, 0) 1px !important;
   color: rgb(0, 0, 0) !important;
   border-radius: 10px;
@@ -39,4 +44,18 @@ color: rgb(0, 0, 0) !important;
 
 .label {
   color: white !important;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.541);
+  box-shadow: 8px 8px 15px var(--shadowDark), -8px -8px 15px var(--shadowLight);
+  border-radius: 10px;
+}
+
+::placeholder {
+  color: rgb(165, 165, 165) !important;
+}
+
+.build-spacer3 {
+  margin-top: 20vh !important;
 }
