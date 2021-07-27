@@ -1,9 +1,10 @@
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import { ADD_EXP } from '../utils/mutations';
+
 import './builds.css';
+
 const Build3 = () => {
   const [form, setForm] = useState({});
   const [addExp, { error }] = useMutation(ADD_EXP);
@@ -21,20 +22,6 @@ const Build3 = () => {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-
-    // if (!form.name || !validateEmail(form.email)) {
-    //   setErrorMessage('Email or username is invalid');
-    //   return;
-    // }
-    // if (!form.summary || !checkIfValid(form.summary)) {
-    //   setErrorMessage(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-    alert(`success`);
-
     try {
       console.log(form);
       const { data } = await addExp({
@@ -49,6 +36,7 @@ const Build3 = () => {
 
 
   return (
+
     <div class="container contain margin1 has-text-centered animate__fadeIn animate__animated">
       <div>
         {errorMessage && (
@@ -57,7 +45,6 @@ const Build3 = () => {
           </div>
         )}
         <form className="form fullBuild3">
-
           <div className="field pt-5 mx-5 px-5">
             <h3>Work Experience</h3>
             <label className="label">Company</label>
@@ -85,7 +72,6 @@ const Build3 = () => {
               <input className="input" type="text" name="keyAchievements" value={form.keyAchievements} onChange={handleInputChange} placeholder="resume, speaking, writing" />
             </div>
           </div>
-
           <div className="has-text-center">
             <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build4">
               Next
