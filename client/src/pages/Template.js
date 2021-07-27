@@ -9,7 +9,7 @@ const Template = () => {
 	});
 
 	return (
-		<html>
+		<html className="hero">
 
 			<head>
 
@@ -25,7 +25,8 @@ const Template = () => {
 			</head>
 
 			<body>
-				<div id="doc2" className="yui-t7">
+				
+				<div id="doc2" className="yui-t7 animate__rollIn animate__animated margin1 contain2 full hero">
 					<div id="inner">
 						<div id="hd">
 							<div className="yui-gc">

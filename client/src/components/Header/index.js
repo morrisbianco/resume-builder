@@ -54,9 +54,9 @@ const Header = () => {
   return (
     <>
       <div className="container-wrap">
-        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-          <div className="navbar-brand">
-            <Link className="navbar-item" to="/">
+        <nav className="navbar is-fixed-top " role="navigation" aria-label="main navigation">
+          <div className="navbar-brand ">
+            <Link className="navbar-item " to="/">
               <i className="fas fa-file-alt" width="112" height="28"></i>
             </Link>
 

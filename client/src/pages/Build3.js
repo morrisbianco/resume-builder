@@ -49,7 +49,7 @@ const Build3 = () => {
 
 
   return (
-    <div class="container build-spacer3">
+    <div class="container contain margin1 has-text-centered animate__fadeIn animate__animated">
       <div>
         {errorMessage && (
           <div>
