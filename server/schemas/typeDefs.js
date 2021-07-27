@@ -28,7 +28,6 @@ type Resume {
 }
 
 input ResumeInput {
-  _id: ID!
   name: String
   city: String
   state: String
@@ -110,7 +109,7 @@ input EducationInput {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createResume(name: String!, city: String!, state: String!, address: String!, zip: String!, linkedIn: String, github: String, phoneNumber: String!, summary: String!, skills: [String]): Resume
-    addResume(userId: ID!, resumeData: ResumeInput): Resume
+    addResume(resumeData: ResumeInput!): User
     createExp(company: String!, role: String!, date: String!, location: String!, description: String!, keyAchievements: String): Experience
     createEd(school: String!, date: String!, location: String, description: String!): Education
     createProject(title: String!, link: String!, points: String, tools: String): Project
