@@ -24,7 +24,7 @@ type Resume {
   github: String
   phoneNumber: String
   summary: String
-  skills: [String]
+  skills: String
 }
 
 input ResumeInput {
@@ -37,7 +37,7 @@ input ResumeInput {
   github: String
   phoneNumber: String
   summary: String
-  skills: [String]
+  skills: String
 }
 
 type Project {
@@ -50,7 +50,6 @@ type Project {
 
 
 input ProjectInput {
-  _id: ID!
   title: String!
   link: String!
   points: String
@@ -69,7 +68,6 @@ type Experience {
 }
 
 input ExperienceInput {
-  _id: ID!
   company: String!
   role: String!
   date: String!
@@ -87,7 +85,6 @@ type Education {
 }
 
 input EducationInput {
-  _id: ID!
   school: String!
   date: String!
   location: String
@@ -113,9 +110,9 @@ input EducationInput {
     createExp(company: String!, role: String!, date: String!, location: String!, description: String!, keyAchievements: String): Experience
     createEd(school: String!, date: String!, location: String, description: String!): Education
     createProject(title: String!, link: String!, points: String, tools: String): Project
-    addExp(userId: ID!, expData: ExperienceInput): Experience
-    addEducation(userId: ID!, educationData: EducationInput): User
-    addProject(userId: ID!, projectData: ProjectInput): User
+    addExp(expData: ExperienceInput): User
+    addEducation(educationData: EducationInput): User
+    addProject(projectData: ProjectInput): User
   }
 `;
 

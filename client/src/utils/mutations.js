@@ -33,9 +33,9 @@ export const CREATE_RESUME = gql`
 `;
 
 export const ADD_RESUME = gql`
-  mutation addResume($userId: ID!, $resumeData: resumeInput!) {
-    addResume(userId: $userId, resumeData: $resumeData) {
-      username
+  mutation addResume($resumeData: ResumeInput!) {
+    addResume(resumeData: $resumeData) {
+      _id
     }
   }
 `;
@@ -48,7 +48,7 @@ export const CREATE_EXP = gql`
   }
 `;
 
-export const CREATE_Ed = gql`
+export const CREATE_ED = gql`
   mutation createEd($school: String!, $date: String!, $location: String, $description: String!) {
     createEd(school: $school, date: $date, location: $location, description: $description) {
       school
@@ -56,7 +56,7 @@ export const CREATE_Ed = gql`
   }
 `;
 
-export const CREATE_Project = gql`
+export const CREATE_PROJECT = gql`
   mutation createProject($title: String!, $link: String!, $points: String, $tools: String) {
     createProject(title: $title, link: $link, points: $points, tools: $tools) {
       title
@@ -64,27 +64,26 @@ export const CREATE_Project = gql`
   }
 `;
 
-export const ADD_Exp = gql`
-  mutation addExp($userId: ID!, $expData: ExperienceInput!) {
-    addExp(userId: $userId, expData: $expData) {
+export const ADD_EXP = gql`
+  mutation addExp($expData: ExperienceInput!) {
+    addExp(expData: $expData) {
       _id
     }
   }
 `;
 
-export const ADD_Education = gql`
-  mutation addEducation($userId: ID!, $educationData: EducationInput!) {
-    addEducation(userId: $userId, educationData: $educationData) {
+export const ADD_EDUCATION = gql`
+  mutation addEducation($educationData: EducationInput!) {
+    addEducation(educationData: $educationData) {
       _id
     }
   }
 `;
 
-export const ADD_Project = gql`
-  mutation addProject($userId: ID!, $projectData: projectInput!) {
-    addProject(userId: $userId, projectData: $projectData) {
+export const ADD_PROJECT = gql`
+  mutation addProject($projectData: ProjectInput!) {
+    addProject(projectData: $projectData) {
       _id
-      username
     }
   }
 `;

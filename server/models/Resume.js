@@ -36,14 +36,13 @@ const resumeSchema = new Schema({
     type: String,
     required: true,
   },
-  skills: [
-    {
-      type: String,
-      trim: true,
-    }
-  ]
+  skills:
+  {
+    type: String,
+    trim: true,
+  }
 });
 
 const Resume = model('Resume', resumeSchema);
 
-module.exports = resumeSchema, Resume;
+module.exports = resumeSchema;
