@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
-
 import Auth from '../../utils/auth';
 
+import './Header.css';
+
 const Header = () => {
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -25,7 +26,7 @@ const Header = () => {
   }
 
   const renderControls = () => {
-    // If logged in show logout controls
+
     if (Auth.loggedIn()) {
       return (
         <>
@@ -38,7 +39,7 @@ const Header = () => {
         </>
       );
     }
-    // If logged out show login controls
+
     return (
       <>
         <Link className="button btnSign" to="/signup">
@@ -69,6 +70,7 @@ const Header = () => {
 
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
+              
               <Link className="navbar-item" to="/">
                 Home
               </Link>

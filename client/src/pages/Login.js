@@ -15,7 +15,6 @@ const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -25,7 +24,6 @@ const Login = (props) => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -38,7 +36,6 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: '',
       password: '',
@@ -46,89 +43,51 @@ const Login = (props) => {
   };
 
   return (
-
+    
     <section class="hero is-fullheight">
-    <div class="hero-body has-text-centered">
-      <div class="login">
-        <h1 className="title">Login</h1>
-        {data ? (
-          <p>
-            Success! You may now head{' '}
-            <Link to="/">back to the homepage.</Link>
-          </p>
-        ) : (
-          <form onSubmit={handleFormSubmit}>
-            <div class="field">
-              <div class="control">
-                <input class="input inputLoginSign is-medium is-rounded" type="email" name="email" onChange={handleChange} value={formState.email} placeholder="hello@example.com" autocomplete="username" required />
+      <div class="hero-body has-text-centered">
+        <div class="login">
+          <h1 className="title">Login</h1>
+          {data ? (
+            <p>
+              Success! You may now head{' '}
+              <Link to="/">back to the homepage.</Link>
+            </p>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <div class="field">
+                <div class="control">
+                  <input class="input inputLoginSign is-medium is-rounded" type="email" name="email" onChange={handleChange} value={formState.email} placeholder="hello@example.com" autocomplete="username" required />
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="control">
-                <input class="input inputLoginSign is-medium is-rounded" type="password" name="password" onChange={handleChange} value={formState.password} placeholder="**********" autocomplete="current-password" required />
+              <div class="field">
+                <div class="control">
+                  <input class="input inputLoginSign is-medium is-rounded" type="password" name="password" onChange={handleChange} value={formState.password} placeholder="**********" autocomplete="current-password" required />
+                </div>
               </div>
+              <br />
+              <button class="button is-block is-fullwidth btnSign  is-medium is-rounded" type="submit">
+                Login
+              </button>
+            </form>
+          )}
+          {error && (
+            <div classNameName="my-3 p-3 bg-danger text-white">
+              {error.message}
             </div>
-            <br />
-            <button class="button is-block is-fullwidth btnSign  is-medium is-rounded" type="submit">
-              Login
-            </button>
-          </form>
-        )}
-        {error && (
-          <div classNameName="my-3 p-3 bg-danger text-white">
-            {error.message}
-          </div>
-        )}
-        <br />
-        <div class="level">
-          <div class="level-item has-text-centered">
-            <div>
-            <a href="#">Don't have an account?</a>
+          )}
+          <br />
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <Link to="/signup">Don't have an account?</Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-    // <section class="hero is-fullheight">
-    //   <div class="hero-body has-text-centered">
-        
-    //     <div class="login">
-        
-    //       <h1 className="title">Login</h1>
-         
-    //       <form>
-    //         <div class="field">
-    //           <div class="control">
-    //             <input class="input inputLoginSign is-medium is-rounded" type="email" placeholder="hello@example.com" autocomplete="username" required />
-    //           </div>
-    //         </div>
-    //         <div class="field">
-    //           <div class="control">
-    //             <input class="input inputLoginSign is-medium is-rounded" type="password" placeholder="**********" autocomplete="current-password" required />
-    //           </div>
-    //         </div>
-    //         <br />
-    //         <button class="button is-block btnLogin is-fullwidth is-medium is-rounded" type="submit">
-    //           Login
-    //         </button>
-    //       </form>
-    //       <br />
-          
-    //         <div class="level">
-    //           <div class="level-item has-text-centered">
-    //             <div>
-    //               <a href="#">Don't have an account?</a>
-    //             </div>
-    //           </div>
-    //         </div>
-    //     </div>
-    //     </div>
-        
-    // </section>
-      
-      );
+    </section>
+  );
 };
 
-      export default Login;
+export default Login;

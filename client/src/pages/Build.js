@@ -3,10 +3,9 @@ import { useMutation, useQuery } from '@apollo/client';
 import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
-import { checkIfValid, validatePhone } from '../utils/helpers';
-
 import { ADD_RESUME } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
+
 import './builds.css';
 
 const Build = () => {
@@ -37,60 +36,6 @@ const Build = () => {
   };
 
   const handleSubmit = async (e) => {
-
-    // if (!form.name || !checkIfValid(form.name)) {
-    //   alert('Username is invalid');
-    //   return;
-    // }
-
-    // if (!form.phoneNumber || !validatePhone(form.phoneNumber)) {
-    //   alert('Phone Number is invalid');
-    //   return;
-    // }
-
-    // if (!form.summary || !checkIfValid(form.summary)) {
-    //   alert(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-
-    // if (!form.skills || !checkIfValid(form.skills)) {
-    //   alert(
-    //     `Please include a list of skills`
-    //   );
-    //   return;
-    // }
-
-    // if (!form.address || !checkIfValid(form.address)) {
-    //   alert(
-    //     `Please include an Address`
-    //   );
-    //   return;
-    // }
-
-    // if (!form.city || !checkIfValid(form.city)) {
-    //   alert(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-
-    // if (!form.state || !checkIfValid(form.state)) {
-    //   alert(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-
-    // if (!form.zip || !checkIfValid(form.zip)) {
-    //   alert(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-
-
     try {
       console.log({ ...form });
       const { data } = await addResume({
@@ -176,6 +121,7 @@ const Build = () => {
               </div>
             </div>
           </div>
+
           <div className="column is-half">
             <div className="field ">
               <label className="label">Zip Code</label>
@@ -184,6 +130,7 @@ const Build = () => {
               </div>
             </div>
           </div>
+
           <div className="column is-half">
             <div className="field">
               <label className="label">Summary</label>
@@ -192,6 +139,7 @@ const Build = () => {
               </div>
             </div>
           </div>
+
           <div className="column is-half">
             <div className="field">
               <label className="label">Skills</label>
@@ -201,6 +149,7 @@ const Build = () => {
             </div>
           </div>
         </div>
+
         <div className="has-text-center">
           <Link className="button btnG m-5" onClick={handleSubmit} to="/Build2">
             Next

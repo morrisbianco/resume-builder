@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -85,7 +83,7 @@ const Signup = () => {
           <div class="level">
             <div class="level-item has-text-centered">
               <div>
-                <a href="#">Already have an account?</a>
+                <Link to="/login" >Already have an account?</Link>
               </div>
             </div>
           </div>
