@@ -1,11 +1,15 @@
 // Node Modules
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 // Utilities
 import Auth from '../utils/auth';
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = `Rapid Résumé | Home`;
+  });
 
   const renderControls = () => {
     // If logged in show logout controls

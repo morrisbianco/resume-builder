@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 
 import Auth from '../utils/auth';
@@ -9,6 +9,11 @@ import UserList from '../components/UserList';
 import './profile.css';
 
 const Profile = () => {
+
+  useEffect(() => {
+    document.title = `Rapid Résumé | Profile`;
+  });
+
   const { loading, data, error } = useQuery(QUERY_ME);
 
   const user = data?.me;

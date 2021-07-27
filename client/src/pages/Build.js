@@ -1,10 +1,15 @@
 import { useMutation } from '@apollo/client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validatePhone } from '../utils/helpers';
 import { CREATE_RESUME } from '../utils/mutations';
 import './builds.css';
 const Build = () => {
+
+  useEffect(() => {
+    document.title = `Rapid Résumé | Create`;
+  });
+
   const [form, setForm] = useState({});
   const [createResume, { error, data }] = useMutation(CREATE_RESUME);
   const [errorMessage, alert] = useState('');
