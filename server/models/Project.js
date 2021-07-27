@@ -21,4 +21,4 @@ const projSchema = new Schema({
 
 const Project = model('Project', projSchema);
 
-module.exports = Project;
+module.exports = projSchema;

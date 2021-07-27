@@ -2,11 +2,11 @@ import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
-import { CREATE_EXP } from '../utils/mutations';
+import { ADD_EXP } from '../utils/mutations';
 import './builds.css';
 const Build3 = () => {
   const [form, setForm] = useState({});
-  const [createExp, { error, data }] = useMutation(CREATE_EXP);
+  const [addExp, { error }] = useMutation(ADD_EXP);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = async (e) => {
@@ -37,8 +37,8 @@ const Build3 = () => {
 
     try {
       console.log(form);
-      const { data } = await createExp({
-        variables: { ...form },
+      const { data } = await addExp({
+        variables: { expData: { ...form } },
       });
     } catch (e) {
       console.error(e);

@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const resumeSchema = require('./Resume');
-const Education = require('./Education');
-const Experience = require('./Experience');
-const Project = require('./Project');
+const eduSchema = require('./Education');
+const expSchema = require('./Experience');
+const projSchema = require('./Project');
 
 const userSchema = new Schema({
   username: {
@@ -23,25 +23,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  resume: [resumeSchema],
-  education: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Education"
-    }
-  ],
-  experience: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Experience"
-    }
-  ],
-  project: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Project"
-    }
-  ]
+  resume: resumeSchema,
+  education: [eduSchema],
+  experience: [expSchema],
+  project: [projSchema]
 });
 
 userSchema.pre('save', async function (next) {

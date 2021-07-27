@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validatePhone } from '../utils/helpers';
 
-import { ADD_RESUME, CREATE_RESUME } from '../utils/mutations';
+import { ADD_RESUME } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import './builds.css';
 
@@ -20,10 +20,10 @@ const Build = () => {
   const [addResume, { error }] = useMutation(ADD_RESUME);
   const [errorMessage, alert] = useState('');
 
-  const { loading, data, usererror } = useQuery(QUERY_ME);
-  // console.log(data);
-  const user = data?.me;
-  if (error) console.log(error);
+  // const { loading, data, usererror } = useQuery(QUERY_ME);
+  // // console.log(data);
+  // const user = data?.me;
+  // if (error) console.log(error);
 
 
   const handleInputChange = async (e) => {
@@ -69,44 +69,42 @@ const Build = () => {
     //   return;
     // }
 
-    if (!form.city || !checkIfValid(form.city)) {
-      alert(
-        `Please include a message`
-      );
-      return;
-    }
+    // if (!form.city || !checkIfValid(form.city)) {
+    //   alert(
+    //     `Please include a message`
+    //   );
+    //   return;
+    // }
 
-    if (!form.state || !checkIfValid(form.state)) {
-      alert(
-        `Please include a message`
-      );
-      return;
-    }
+    // if (!form.state || !checkIfValid(form.state)) {
+    //   alert(
+    //     `Please include a message`
+    //   );
+    //   return;
+    // }
 
-    if (!form.zip || !checkIfValid(form.zip)) {
-      alert(
-        `Please include a message`
-      );
-      return;
-    }
+    // if (!form.zip || !checkIfValid(form.zip)) {
+    //   alert(
+    //     `Please include a message`
+    //   );
+    //   return;
+    // }
 
 
     try {
-      // const { resdata } = await createResume({
-      //   variables: { ...form },
-      // });
       console.log({ ...form });
       const { data } = await addResume({
         variables: { resumeData: { ...form } }
       });
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
     }
 
     setForm({});
   };
 
   return (
+
 
     <div class="container contain margin1 has-text-centered">
       <h1 className="">User Information</h1>
@@ -122,11 +120,11 @@ const Build = () => {
               <label className="label">Name</label>
               <div className="control">
                 <input className="input" type="text" name="name" value={form.name} onChange={handleInputChange} placeholder="First Last" />
-
               </div>
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">Phone</label>
               <div className="control">
@@ -135,6 +133,7 @@ const Build = () => {
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">Github</label>
               <div className="control">
@@ -143,6 +142,7 @@ const Build = () => {
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">Linkedin</label>
               <div className="control">
@@ -151,14 +151,17 @@ const Build = () => {
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">Address</label>
+
               <div className="control">
                 <input className="input" type="text" name="address" value={form.address} onChange={handleInputChange} placeholder="1234 Resume St" />
               </div>
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">City</label>
               <div className="control">
@@ -167,6 +170,7 @@ const Build = () => {
             </div>
           </div>
           <div className="column is-half">
+
             <div className="field ">
               <label className="label">State</label>
               <div className="control">

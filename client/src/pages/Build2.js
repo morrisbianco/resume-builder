@@ -2,11 +2,11 @@ import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validateEmail } from '../utils/helpers';
-import { CREATE_Ed } from '../utils/mutations';
+import { ADD_EDUCATION } from '../utils/mutations';
 import './builds.css';
 const Build2 = () => {
   const [form, setForm] = useState({});
-  const [createEducation, { error, data }] = useMutation(CREATE_Ed);
+  const [addEducation, { error }] = useMutation(ADD_EDUCATION);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = async (e) => {
@@ -36,8 +36,8 @@ const Build2 = () => {
 
     try {
       console.log(form);
-      const { data } = await createEducation({
-        variables: { ...form },
+      const { data } = await addEducation({
+        variables: { educationData: { ...form } },
       });
     } catch (e) {
       console.error(e);
@@ -75,8 +75,6 @@ const Build2 = () => {
           <div className="control">
             <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
           </div>
-        </div>
-
         <div className="has-text-center">
           <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/Build3">
             Next

@@ -51,7 +51,7 @@ const resolvers = {
       // console.log("resumeData", resumeData);
       const updateUser = await User.findByIdAndUpdate(
         { _id: context.user._id },
-        { $push: { resume: resumeData } },
+        { $addToSet: { resume: resumeData } },
         { new: true }
       );
       return updateUser;
@@ -68,30 +68,29 @@ const resolvers = {
       const newProject = await Project.create(args);
       return newProject;
     },
-    addExp: async (_, args, context) => {
-      console.log(args.expData);
+    addExp: async (_, { expData }, context) => {
       const updateResume = await User.findByIdAndUpdate(
-        { _id: args.userId },
-        { $push: { experience: args.expData } },
+        { _id: context.user._id },
+        { $push: { experience: expData } },
         { new: true }
       );
       return updateResume;
     },
-    addEducation: async (_, args, context) => {
-      const updateResume = await User.findByIdAndUpdate(
-        { _id: args.userId },
-        { $push: { education: args.educationData } },
+    addEducation: async (_, { educationData }, context) => {
+      const updateEducation = await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $push: { education: educationData } },
         { new: true }
       );
-      return updateResume;
+      return updateEducation;
     },
-    addProject: async (_, args, context) => {
-      const updateResume = await User.findByIdAndUpdate(
-        { _id: args.userId },
-        { $push: { project: args.projectData } },
+    addProject: async (_, { projectData }, context) => {
+      const updateProjects = await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $push: { project: projectData } },
         { new: true }
       );
-      return updateResume;
+      return updateProjects;
     },
   }
 };
