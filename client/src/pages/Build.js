@@ -1,13 +1,23 @@
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkIfValid, validatePhone } from '../utils/helpers';
-import { CREATE_RESUME } from '../utils/mutations';
+
+import { ADD_RESUME, CREATE_RESUME } from '../utils/mutations';
+import { QUERY_ME } from '../utils/queries';
 import './builds.css';
+
 const Build = () => {
   const [form, setForm] = useState({});
-  const [createResume, { error, data }] = useMutation(CREATE_RESUME);
+  // const [createResume, { error, resdata }] = useMutation(CREATE_RESUME);
+  const [addResume, { error }] = useMutation(ADD_RESUME);
   const [errorMessage, alert] = useState('');
+
+  const { loading, data, usererror } = useQuery(QUERY_ME);
+  // console.log(data);
+  const user = data?.me;
+  if (error) console.log(error);
+
 
   const handleInputChange = async (e) => {
     const { target } = e;
@@ -21,36 +31,36 @@ const Build = () => {
 
   const handleSubmit = async (e) => {
 
-    if (!form.name || !checkIfValid(form.name)) {
-      alert('Username is invalid');
-      return;
-    }
+    // if (!form.name || !checkIfValid(form.name)) {
+    //   alert('Username is invalid');
+    //   return;
+    // }
 
-    if (!form.phoneNumber || !validatePhone(form.phoneNumber)) {
-      alert('Phone Number is invalid');
-      return;
-    }
+    // if (!form.phoneNumber || !validatePhone(form.phoneNumber)) {
+    //   alert('Phone Number is invalid');
+    //   return;
+    // }
 
-    if (!form.summary || !checkIfValid(form.summary)) {
-      alert(
-        `Please include a message`
-      );
-      return;
-    }
+    // if (!form.summary || !checkIfValid(form.summary)) {
+    //   alert(
+    //     `Please include a message`
+    //   );
+    //   return;
+    // }
 
-    if (!form.skills || !checkIfValid(form.skills)) {
-      alert(
-        `Please include a list of skills`
-      );
-      return;
-    }
+    // if (!form.skills || !checkIfValid(form.skills)) {
+    //   alert(
+    //     `Please include a list of skills`
+    //   );
+    //   return;
+    // }
 
-    if (!form.address || !checkIfValid(form.address)) {
-      alert(
-        `Please include an Address`
-      );
-      return;
-    }
+    // if (!form.address || !checkIfValid(form.address)) {
+    //   alert(
+    //     `Please include an Address`
+    //   );
+    //   return;
+    // }
 
     if (!form.city || !checkIfValid(form.city)) {
       alert(
@@ -73,9 +83,14 @@ const Build = () => {
       return;
     }
 
+
     try {
-      const { data } = await createResume({
-        variables: { ...form },
+      // const { resdata } = await createResume({
+      //   variables: { ...form },
+      // });
+      console.log({ ...form });
+      const { data } = await addResume({
+        variables: { resumeData: { ...form } }
       });
     } catch (e) {
       console.error(e);
@@ -85,6 +100,7 @@ const Build = () => {
   };
 
   return (
+
     <div class="container  has-text-centered">
 
 

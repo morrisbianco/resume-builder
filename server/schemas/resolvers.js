@@ -46,11 +46,12 @@ const resolvers = {
       const newResume = await Resume.create(args);
       return newResume;
     },
-    addResume: async (_, args, context) => {
-      console.log(args);
+    addResume: async (_, { resumeData }, context) => {
+      console.log("userID", context.user._id);
+      // console.log("resumeData", resumeData);
       const updateUser = await User.findByIdAndUpdate(
-        { _id: args.userId },
-        { $push: { resume: args.resumeData } },
+        { _id: context.user._id },
+        { $push: { resume: resumeData } },
         { new: true }
       );
       return updateUser;
