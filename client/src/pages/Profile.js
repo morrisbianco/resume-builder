@@ -9,15 +9,14 @@ import UserList from '../components/UserList';
 import './profile.css'
 
 const Profile = () => {
-  
+
   useEffect(() => {
     document.title = `Rapid Résumé | Profile`;
   });
-  
-  const { loading, data, error } = useQuery(QUERY_ME);
 
+  const { loading, data, error } = useQuery(QUERY_ME);
+  console.log('data: ', data);
   const user = data?.me;
-  console.log(user)
   if (error) console.log(error);
 
   if (loading) {
@@ -66,7 +65,7 @@ const Profile = () => {
           {/* resume end */}
         </div>
       </div>
-      
+
     </div>
   );
 };

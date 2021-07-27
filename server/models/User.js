@@ -23,7 +23,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  resume: resumeSchema,
+  resume: [resumeSchema],
   education: [eduSchema],
   experience: [expSchema],
   project: [projSchema]
