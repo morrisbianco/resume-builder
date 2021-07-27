@@ -35,7 +35,7 @@ const Build4 = () => {
 
 
   return (
-    <div class="container margin1 contain has-text-centered animate__fadeIn animate__animated">
+    <div className="container margin1 contain has-text-centered animate__fadeIn animate__animated">
       <div>
         {errorMessage && (
           <div>
