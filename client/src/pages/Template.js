@@ -38,8 +38,13 @@ const Template = () => {
 								<div className="yui-u">
 									<div className="contact-info">
 
-										<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
-										<h3>(313) - 867-5309</h3>
+
+											<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
+											<h3>(313)-867-5309</h3>
+                      <h3>555 Fake Street, Fakeville</h3>
+                      <h3>NC, 55555</h3>
+										</div>
+										{/* <!--// .contact-info --> */}
 									</div>
 									{/* <!--// .contact-info --> */}
 								</div>
@@ -65,20 +70,28 @@ const Template = () => {
 									</div>
 									{/* <!--// .yui-gf --> */}
 
-									<div className="yui-gf">
-										<div className="yui-u first">
-											<h2>Skills</h2>
-										</div>
-										<div className="yui-u">
-
-											<div className="talent">
-												<h2>Web Design</h2>
-												<p>Assertively exploit wireless initiatives rather than synergistic core competencies. </p>
+                    <div className="yui-gf">
+											<div className="yui-u first">
+												<h2>Skills</h2>
 											</div>
+											<div className="yui-u">
+												<ul className="talent">
+													<li>XHTML</li>
+													<li>CSS</li>
+													<li className="last">Javascript</li>
+												</ul>
 
-											<div className="talent">
-												<h2>Interface Design</h2>
-												<p>Credibly streamline mission-critical value with multifunctional functionalities. </p>
+												<ul className="talent">
+													<li>Jquery</li>
+													<li>PHP</li>
+													<li className="last">CVS / Subversion</li>
+												</ul>
+
+												<ul className="talent">
+													<li>OS X</li>
+													<li>Windows XP/Vista</li>
+													<li className="last">Linux</li>
+												</ul>
 											</div>
 
 											<div className="talent">
@@ -94,42 +107,64 @@ const Template = () => {
 										<div className="yui-u first">
 											<h2>Technical</h2>
 										</div>
-										<div className="yui-u">
-											<ul className="talent">
-												<li>XHTML</li>
-												<li>CSS</li>
-												<li className="last">Javascript</li>
-											</ul>
+										{/* <!--// .yui-gf --> */}
 
-											<ul className="talent">
-												<li>Jquery</li>
-												<li>PHP</li>
-												<li className="last">CVS / Subversion</li>
-											</ul>
+                    <div className="yui-gf">
+											<div className="yui-u first">
+												<h2>Projects</h2>
+											</div>
+											<div className="yui-u">
 
-											<ul className="talent">
-												<li>OS X</li>
-												<li>Windows XP/Vista</li>
-												<li className="last">Linux</li>
-											</ul>
+												<div className="talent">
+													<h2>Webpage Designer</h2>
+													<p>Efficiently design high-end web applications with this seamless integration. </p>
+                          <p>WebpageDesigner.com</p>
+												</div>
+
+												<div className="talent">
+													<h2>App Interface Debugger</h2>
+													<p>Debug your app's interface like a professional with React-friendly debugging application. </p>
+                          <p>AppIDebugger.com</p>
+												</div>
+
+												<div className="talent">
+													<h2>Project Manager</h2>
+													<p>A project manager built into your console that allows the user to manage multiple projects and teams. </p>
+                          <p>ProjManager.com</p>
+                        </div>
+											</div>
 										</div>
-									</div>
-									{/* <!--// .yui-gf--> */}
+										
+										{/* <!--// .yui-gf--> */}
+
 
 									<div className="yui-gf">
-
-										<div className="yui-u first">
-											<h2>Experience</h2>
+											<div className="yui-u first">
+												<h2>Experience</h2>
+											</div>
+											{/* <!--// .yui-u --> */}
+											<div className="yui-u">
+												<div className="job last">
+													<h2>International Business Machines (IBM)</h2>
+                          <h2>Armonk, New York</h2>
+													<h3>Lead Web Designer</h3>
+													<h4>2001-2004</h4>
+													<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
+														long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
+														e-tailers with timely e-markets.</p>
+												</div>
+											</div>
 										</div>
-										{/* <!--// .yui-u --> */}
-										<div className="yui-u">
-											<div className="job last">
-												<h2>International Business Machines (IBM)</h2>
-												<h3>Lead Web Designer</h3>
-												<h4>2001-2004</h4>
-												<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
-													long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
-													e-tailers with timely e-markets.</p>
+										<div className="yui-gf last">
+											<div className="yui-u first">
+												<h2>Education</h2>
+											</div>
+                      <div className="job last">
+                      <h4>1996-2000</h4>
+                      </div>
+											<div className="yui-u">
+												<h2>Indiana University - Bloomington, Indiana</h2>
+												<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
 											</div>
 										</div>
 									</div>
@@ -145,10 +180,12 @@ const Template = () => {
 								</div>
 							</div>
 						</div>
+							<div id="ft">
+								<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313)-867-5309 &mdash; 555 Fake Street, Fakeville, NC 55555
+								</p>
+							</div>
+							{/* <!--// footer --> */}
 
-						<div id="ft">
-							<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313) - 867-5309
-							</p>
 						</div>
 						{/* <!--// footer --> */}
 
