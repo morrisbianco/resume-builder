@@ -1,7 +1,8 @@
 body {
   transition: 100ms;
-  background: var(--main-color);
-  color: var(--white-text);
+  background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%) !important;
+
 }
 
 .hero, .cta {
@@ -13,29 +14,35 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.cardstyle {
+background: rgba(0, 0, 0, 0.527);
+padding: 10px;
+border-radius: 5px;
+}
+
 .title {
-  color: white;
+  color: rgb(255, 255, 255) !important;
   font-weight: 800;
   font-size: 4rem;
-  font-family: Arial;
+
   text-shadow: 1px 1px 1px #000 3px 3px 5px rgb(0 0 3);
 }
 
 .subtitle {
-  color: white;
+  color: rgb(255, 255, 255) !important;
   font-size: 1.2rem;
   text-shadow: 2px 2px 2px #000 1px 1px 1px rgb(0 0 0);
 }
 
 .content-divider {
-  background: grey;
+  background: rgb(255, 255, 255);
  }
 
-.btnGo {
+.btn {
   font-size: 20px;
-  background: black;
-  color: white;
-  border: transparent 1px;
+  background: rgb(0, 0, 0) !important;
+  color: white !important;
+  border: solid rgb(255, 255, 255) 1px !important;
 }
 
 #parallax-1 {
@@ -65,7 +72,7 @@ body {
 }
 
 hr {
-  background: grey;
+  background: rgb(0, 0, 0);
 }
 
 label {

@@ -2,7 +2,11 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import Auth from '../utils/auth';
-import { QUERY_ME } from '../utils/queries';
+
+import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+// Components
+import UserList from '../components/UserList';
+import './profile.css';
 
 const Profile = () => {
   const { loading, data, error } = useQuery(QUERY_ME);
@@ -17,7 +21,7 @@ const Profile = () => {
 
   if (!Auth.loggedIn()) {
     return (
-      <h4>
+      <h4 className="fullprofile">
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>

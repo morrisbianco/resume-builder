@@ -1,5 +1,5 @@
 input::placeholder {
-  color: black !important;
+  color: rgb(136, 136, 136) !important;
 }
 
 .hero {
@@ -54,6 +54,11 @@ body {
   letter-spacing: -1px;
   font-family: arial;
 }
+
+.fullSignup {
+  margin-bottom: 30vh !important;
+  
+  }
 
 .right, .description {
   
