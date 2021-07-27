@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
 import './profile.css'
 
 const Profile = () => {
