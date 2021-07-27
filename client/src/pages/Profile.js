@@ -26,24 +26,47 @@ const Profile = () => {
 
   if (!Auth.loggedIn()) {
     return (
-      <h4 className="fullprofile">
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <div className="has-text-centered">
+        <h4 className="fullprofile title mt-6">
+          You need to be logged in to see this page. <br /> Use the navigation links above to
+          sign up or log in!
+        </h4>
+      </div>
     );
   }
 
   return (
     <div>
-      <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+      <div className=" has-text-centered">
+        <h2 className="title">
           Viewing {`${user.username}'s`} Resumes.
         </h2>
-        <ul>
-          <li>username: {user.username}</li>
-          <li>email: {user.email}</li>
-        </ul>
       </div>
+      <div className="container margin1 has-text-centered">
+        <div class="columns is-multiline features">
+          {/* resume start */}
+          <div class="column is-4 is-auto">
+            <div class="card is-shady">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <a href="#">
+                    <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2" />
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <h4>user.resumeName</h4>
+                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
+                  <span class="button is-link modal-button" data-target="modal-image2">View resume</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* resume end */}
+        </div>
+      </div>
+      
     </div>
   );
 };

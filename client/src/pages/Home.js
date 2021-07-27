@@ -16,7 +16,7 @@ const Home = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Link to="/Build" className="button btn">Start Building&ensp;<i className="fas fa-angle-double-right"></i></Link>
+          <Link to="/Build" className="button btnSign">Start Building&ensp;<i className="fas fa-angle-double-right"></i></Link>
         </>
       );
     }
@@ -24,25 +24,26 @@ const Home = () => {
     // If logged out show login controls
     return (
       <>
-        <p>Please Login to Create a Resume</p>
+        <Link className="button btnLogin" to="/login">
+          Get started!
+        </Link>
       </>
     )
   };
 
   return (
     <>
-      <div className="shadow"></div>
 
       <section id="parallax-1" className="hero is-large ">
         <div className="hero-body">
-          <div className="container">
+          <div>
             <div className="columns">
               <div className="column is-6 is-offset-3 has-text-centered">
                 <div className="cardstyle">
                   <h1 className="title is-1">Discover Better</h1>
                   <hr className="content-divider" />
                   <h2 className="subtitle">Answer a few questions about your background, skills and experience, then select a template. Our Resume Builder does the rest. Start today for free!</h2>
-                  <Link to="/Template" className="button btn ">View Template&ensp;</Link>
+                  <Link to="/Template" className="button btnView ">View Template&ensp;</Link>
                 </div>
               </div>
             </div>
@@ -52,7 +53,7 @@ const Home = () => {
 
       <section id="parallax-2" className="hero is-large ">
         <div className="hero-body">
-          <div className="container">
+          <div>
             <div className="columns">
               <div className="column is-6 is-offset-6 has-text-centered">
                 <div className="cardstyle">
@@ -69,7 +70,7 @@ const Home = () => {
 
       <section id="parallax-3" className="hero is-large">
         <div className="hero-body">
-          <div className="container">
+          <div>
             <div className="columns">
               <div className="column is-6  has-text-centered">
 
@@ -77,7 +78,7 @@ const Home = () => {
                   <h1 className="title is-1">Get to know our team</h1>
                   <hr className="content-divider" />
                   <h2 className="subtitle">Learn more about the team <br></br> who made this website possible</h2>
-                  <Link href="#" className="button btn">Our Team&ensp;<i className="fas fa-angle-double-right"></i></Link>
+                  <Link href="#" className="button btnSign">Our Team&ensp;<i className="fas fa-angle-double-right"></i></Link>
                 </div>
               </div>
             </div>

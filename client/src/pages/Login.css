@@ -1,72 +1,31 @@
-input::placeholder {
-  color: rgb(105, 105, 105) !important;
+
+:root {
+  --shadowDark: #00000065;
+  --background: #E4E9F2;
+  --shadowLight: #00000083;
 }
 
-.hero {
-  background: linear-gradient(to right #1d4568 #000428);
+
+.hero-body {
+  justify-content: center;
 }
 
-input {
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
-}
-
-.underscore {
-  text-decoration: underline
-}
-
-body {
-  transition: 100ms;
-  background: rgb(240 240 240);
-  color: hsla(0 0% 0% 0.66);
-  
-}
-
-.fullLogin {
-margin-bottom: 30vh !important;
-
-}
-
-.register {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  background: white;
+.login {
   border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 15px var(--shadowDark), -8px -8px 15px var(--shadowLight);
+  background: rgba(0, 0, 0, 0.541);
 }
 
-.left {
-  padding: 4.5rem;
-  border-right: 5px solid rgb(240 240 240);
+.inputLoginSign {
+  background: var(--shadowDark) !important;
 }
 
-.right {
-  padding: 4.5rem;
+a {
+  font-weight: 600;
 }
 
-.left, .title {
-  font-weight: 500;
-  letter-spacing: -2px;
-  
-}
-
-.left, p {
-  color: hsla(0 0% 0% 0.33);
-  font-size: 1.15rem;
-}
-
-.right, .title {
-  font-weight: 800;
-  letter-spacing: -1px;
-  
-}
-
-.right, .description {
-  
-  margin-bottom: 1rem;
-  color: hsla(0 0% 0% 0.33);
-  font-size: 1.15rem;
-}
-
-.right, small {
-  color: hsla(0 0% 0% 0.33);
+.title {
+  margin-bottom: 20px;
+  text-shadow: black 5px 1px 3px !important;
 }
