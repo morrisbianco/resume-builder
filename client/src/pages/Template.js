@@ -1,8 +1,12 @@
 // Node Modules
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Template.css';
 
 const Template = () => {
+
+  useEffect(() => {
+    document.title = `Rapid Résumé | Template`;
+  });
 
 	return (
 		<html>
