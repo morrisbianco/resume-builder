@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -57,7 +57,11 @@ const Profile = () => {
                 <div class="content">
                   <h4>user.resumeName</h4>
                   <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <span class="button is-link modal-button" data-target="modal-image2">View resume</span>
+                  <span class="button is-link modal-button" data-target="modal-image2">
+                    <Link to="/Resume">
+                      View resume
+                    </Link>
+                  </span>
                 </div>
               </div>
             </div>
