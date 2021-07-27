@@ -9,11 +9,11 @@ import UserList from '../components/UserList';
 import './profile.css'
 
 const Profile = () => {
-  
+
   useEffect(() => {
     document.title = `Rapid Résumé | Profile`;
   });
-  
+
   const { loading, data, error } = useQuery(QUERY_ME);
 
   const user = data?.me;
@@ -21,13 +21,13 @@ const Profile = () => {
   if (error) console.log(error);
 
   if (loading) {
-    return <h4>Loading...</h4>;
+    return <h4 className="fullBuild4">Loading...</h4>;
   }
 
   if (!Auth.loggedIn()) {
     return (
       <div className="has-text-centered">
-        <h4 className="fullprofile title mt-6">
+        <h4 className="fullBuild4 title mt-6">
           You need to be logged in to see this page. <br /> Use the navigation links above to
           sign up or log in!
         </h4>
@@ -37,12 +37,12 @@ const Profile = () => {
 
   return (
     <div>
-      <div className=" has-text-centered">
-        <h2 className="title">
-          Viewing {`${user.username}'s`} Resumes.
-        </h2>
-      </div>
-      <div className="container margin1 has-text-centered">
+      <div className="container profile margin1 has-text-centered animate__slideInUp animate__animated">
+        <div>
+          <h2 className="title">
+            Viewing {`${user.username}'s`} Resumes.
+          </h2>
+        </div>
         <div class="columns is-multiline features">
           {/* resume start */}
           <div class="column is-4 is-auto">
@@ -57,8 +57,7 @@ const Profile = () => {
               <div class="card-content">
                 <div class="content">
                   <h4>user.resumeName</h4>
-                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <span class="button is-link modal-button" data-target="modal-image2">View resume</span>
+                  <span class="button btnSign" data-target="modal-image2">View resume</span>
                 </div>
               </div>
             </div>
@@ -66,7 +65,7 @@ const Profile = () => {
           {/* resume end */}
         </div>
       </div>
-      
+
     </div>
   );
 };

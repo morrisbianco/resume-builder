@@ -26,7 +26,7 @@ const Template = () => {
 
 			<body>
 				<main>
-					<div id="doc2" className="yui-t7">
+					<div id="doc2" className="yui-t7 animate__rollIn animate__animated">
 						<div id="inner">
 
 							<div id="hd">

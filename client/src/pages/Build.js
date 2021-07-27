@@ -104,9 +104,7 @@ const Build = () => {
   };
 
   return (
-
-
-    <div class="container contain margin1 has-text-centered">
+    <div class="container contain1 margin1 has-text-centered animate__fadeIn animate__animated">
       <h1 className="">User Information</h1>
       <div>
         {errorMessage && (

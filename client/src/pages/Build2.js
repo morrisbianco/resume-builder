@@ -48,7 +48,7 @@ const Build2 = () => {
 
 
   return (
-    <div class="container contain margin1 has-text-centered">
+    <div class="container contain margin1 has-text-centered animate__fadeIn animate__animated">
       <h3>Education</h3>
       <div>
         {errorMessage && (
@@ -56,7 +56,7 @@ const Build2 = () => {
             <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
           </div>
         )}
-        <form className="fullBuild2">
+        <form className="form fullBuild2">
 
           <div className="pt-5 mx-5 px-5">
             <label className="label">School</label>
