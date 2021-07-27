@@ -1,7 +1,6 @@
 // Node Modules
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
 import './Home.css';
 // Utilities
 import Auth from '../utils/auth';
@@ -13,7 +12,7 @@ const Home = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Link to="/Build" className="button is-white is-inverted">Create a Resume&ensp;<i className="fas fa-angle-double-right"></i></Link>
+          <Link to="/Build" className="button is-white is-inverted">Start Building&ensp;<i className="fas fa-angle-double-right"></i></Link>
         </>
       );
     }
@@ -36,10 +35,10 @@ const Home = () => {
             <div className="columns">
               <div className="column is-6 is-offset-3 has-text-centered">
                 <div className="cardstyle">
-                  <h1 className="title is-1">Getting started</h1>
+                  <h1 className="title is-1">Discover Better</h1>
                   <hr className="content-divider" />
-                  <h2 className="subtitle">build your resume in minutes</h2>
-                  <Link to="/Build" className="button is-white is-inverted">Start Building&ensp;</Link>
+                  <h2 className="subtitle">See what your resume will look like</h2>
+                  <Link to="/Template" className="button is-white is-inverted">View Template&ensp;</Link>
                 </div>
               </div>
             </div>
@@ -53,11 +52,9 @@ const Home = () => {
             <div className="columns">
               <div className="column is-6 has-text-centered">
                 <div className="cardstyle">
-                  <h1 className="title is-1">Dolor Sit</h1>
+                  <h1 className="title is-1">Getting started</h1>
                   <hr className="content-divider" />
-                  <h2 className="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod non odit beatae! Hic
-                    dignissimos incidunt ea eius doloremque quos corrupti fugiat architecto alias consequatur neque nemo,
-                    beatae nisi eaque nesciunt!.</h2>
+                  <h2 className="subtitle">build your resume in minutes</h2>
                   {renderControls()}
                 </div>
               </div>

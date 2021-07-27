@@ -73,9 +73,9 @@ const Header = () => {
                 Home
               </Link>
 
-              <a className="navbar-item">
+              <Link className="navbar-item" to="/template">
                 Template
-              </a>
+              </Link>
 
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">
