@@ -7,10 +7,10 @@ type User {
   username: String
   email: String
   password: String
-  resume: Resume
+  resume: [Resume]
   education: [Education]
-  experiences: [Experience]
-  projects: [Project]
+  experience: [Experience]
+  project: [Project]
 }
 
 type Resume {

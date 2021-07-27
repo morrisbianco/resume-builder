@@ -15,9 +15,8 @@ const Profile = () => {
   });
 
   const { loading, data, error } = useQuery(QUERY_ME);
-
+  console.log('data: ', data);
   const user = data?.me;
-  console.log(user)
   if (error) console.log(error);
 
   if (loading) {
