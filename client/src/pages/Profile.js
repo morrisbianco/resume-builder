@@ -40,21 +40,21 @@ const Profile = () => {
             Viewing {`${user.username}'s`} Resumes.
           </h2>
         </div>
-        <div class="columns is-multiline features">
+        <div className="columns is-multiline features">
           {/* resume start */}
-          <div class="column is-4 is-auto">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
+          <div className="column is-4 is-auto">
+            <div className="card is-shady">
+              <div className="card-image">
+                <figure className="image is-4by3">
                   <a href="#">
                     <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2" />
                   </a>
                 </figure>
               </div>
-              <div class="card-content">
-                <div class="content">
+              <div className="card-content">
+                <div className="content">
                   <h4>user.resumeName</h4>
-                  <span class="button btnSign" data-target="modal-image2">View resume</span>
+                  <span className="button btnSign" data-target="modal-image2">View resume</span>
                 </div>
               </div>
             </div>
