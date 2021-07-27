@@ -58,19 +58,19 @@ const Build4 = () => {
 
           <div className="field pt-5 mx-5 px-5">
             <h3>Projects</h3>
-            <label className="label">Title:</label>
+            <label className="label">Title</label>
             <div className="control">
               <input className="input" type="text" name="title" value={form.title} onChange={handleInputChange} placeholder="Project Title" />
             </div>
-            <label className="label">Link:</label>
+            <label className="label">Link</label>
             <div className="control">
               <input className="input" type="text" name="link" value={form.link} onChange={handleInputChange} placeholder="Link to Website" />
             </div>
-            <label className="label">Bullet Points:</label>
+            <label className="label">Bullet Points</label>
             <div className="control">
               <input className="input" type="text" name="points" value={form.points} onChange={handleInputChange} placeholder="Describe Aspects" />
             </div>
-            <label className="label">Tools Used:</label>
+            <label className="label">Tools Used</label>
             <div className="control">
               <input className="input" type="text" name="tools" value={form.tools} onChange={handleInputChange} placeholder="resume, speaking, writing" />
             </div>
