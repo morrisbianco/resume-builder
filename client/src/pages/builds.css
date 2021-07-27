@@ -69,6 +69,13 @@ textarea {
   max-width: 1000px !important;
 }
 
+
+.contain2 {
+  box-shadow: 10px 10px 10px var(--shadowDark), -1px -1px 1px var(--shadowLight);
+  border-radius: 0px ;
+  border: none !important;
+}
+
 .contain {
   background: rgba(0, 0, 0, 0.541);
   box-shadow: 10px 10px 10px var(--shadowDark), -1px -1px 1px var(--shadowLight);
