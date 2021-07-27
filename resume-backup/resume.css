@@ -1,4 +1,26 @@
 
+.msg {
+    padding: 10px;
+    background: #222;
+    position: relative;
+}
+
+.msg h1 {
+    color: #fff;
+}
+
+.msg a {
+    margin-left: 20px;
+    background: #408814;
+    color: white;
+    padding: 4px 8px;
+    text-decoration: none;
+}
+
+.msg a:hover {
+    background: #266400;
+}
+
 /* //-- yui-grids style overrides -- */
 
 body {
@@ -16,7 +38,7 @@ body {
 /* yui framework changes */
 .yui-gf {
     margin-bottom: 2em;
-    padding-bottom: 2em;
+    
     border-bottom: 1px solid #ccc;
 }
 
@@ -57,6 +79,18 @@ body {
     font-size: 48px;
     text-transform: uppercase;
     letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 152%
+}
+
+h3, h4 {
+    font-size: 122%;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
 }
 
 p {
@@ -181,13 +215,4 @@ a#pdf {
 
 .yui-gf div.first {
     width: 12.3%;
-}
-
-html {
-    overflow: scroll;
-    overflow-y: hidden;
-}
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
 }

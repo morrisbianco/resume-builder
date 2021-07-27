@@ -29,10 +29,10 @@ const Header = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Link className="button is-primary" to="/me">
+          <Link className="button btnSign" to="/me">
             {Auth.getProfile().data.username}'s profile
           </Link>
-          <Link className="button is-light" onClick={logout}>
+          <Link className="button btnLogin" onClick={logout}>
             Logout
           </Link>
         </>
@@ -41,10 +41,10 @@ const Header = () => {
     // If logged out show login controls
     return (
       <>
-        <Link className="button is-primary" to="/signup">
+        <Link className="button btnSign" to="/signup">
           <strong>Sign up</strong>
         </Link>
-        <Link className="button is-light" to="/login">
+        <Link className="button btnLogin" to="/login">
           Log in
         </Link>
       </>

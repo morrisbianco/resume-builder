@@ -12,7 +12,7 @@ const Home = () => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Link to="/Build" className="button is-white is-inverted">Start Building&ensp;<i className="fas fa-angle-double-right"></i></Link>
+          <Link to="/Build" className="button btn">Start Building&ensp;<i className="fas fa-angle-double-right"></i></Link>
         </>
       );
     }
@@ -37,8 +37,8 @@ const Home = () => {
                 <div className="cardstyle">
                   <h1 className="title is-1">Discover Better</h1>
                   <hr className="content-divider" />
-                  <h2 className="subtitle">See what your resume will look like</h2>
-                  <Link to="/Template" className="button is-white is-inverted">View Template&ensp;</Link>
+                  <h2 className="subtitle">Answer a few questions about your background, skills and experience, then select a template. Our Resume Builder does the rest. Start today for free!</h2>
+                  <Link to="/Template" className="button btn ">View Template&ensp;</Link>
                 </div>
               </div>
             </div>
@@ -50,11 +50,11 @@ const Home = () => {
         <div className="hero-body">
           <div className="container">
             <div className="columns">
-              <div className="column is-6 has-text-centered">
+              <div className="column is-6 is-offset-6 has-text-centered">
                 <div className="cardstyle">
                   <h1 className="title is-1">Getting started</h1>
                   <hr className="content-divider" />
-                  <h2 className="subtitle">build your resume in minutes</h2>
+                  <h2 className="subtitle">Answer a few questions about your background, skills and experience, then select a template. Our Resume Builder does the rest. Start today for free!</h2>
                   {renderControls()}
                 </div>
               </div>
@@ -67,15 +67,13 @@ const Home = () => {
         <div className="hero-body">
           <div className="container">
             <div className="columns">
-              <div className="column is-6 is-offset-6">
+              <div className="column is-6  has-text-centered">
 
                 <div className="cardstyle">
-                  <h1 className="title is-1">Amet Consectetur</h1>
+                  <h1 className="title is-1">Get to know our team</h1>
                   <hr className="content-divider" />
-                  <h2 className="subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum illum cupiditate
-                    excepturi fugiat, alias ipsa. Accusantium delectus commodi incidunt dolorum numquam et iste nulla, error
-                    rem labore dolorem doloribus unde..</h2>
-                  <Link href="#" className="button is-white is-inverted">Next&ensp;<i className="fas fa-angle-double-right"></i></Link>
+                  <h2 className="subtitle">Learn more about the team <br></br> who made this website possible</h2>
+                  <Link href="#" className="button btn">Our Team&ensp;<i className="fas fa-angle-double-right"></i></Link>
                 </div>
               </div>
             </div>

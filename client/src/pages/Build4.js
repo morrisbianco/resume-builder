@@ -76,7 +76,7 @@ const Build4 = () => {
             </div>
           </div>
           <div className="has-text-right">
-            <Link className="button p-5 m-5 px-5" onClick={handleSubmit} to="/me">
+            <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/me">
               Submit
             </Link>
           </div>

@@ -7,3 +7,18 @@ footer {
 a {
   color: rgb(36, 78, 156);
 }
+
+.btnB {
+  background: rgb(0, 0, 0) !important;
+  border: solid rgb(255, 255, 255) 1px !important;
+  color: white !important;
+  transition: 200ms;
+}
+
+.btnB:hover {
+  background: rgb(201, 69, 17) !important;
+  border: solid rgb(255, 255, 255) 1px !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 10px;
+  transition: 200ms;
+}
