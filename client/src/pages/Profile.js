@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -15,9 +15,8 @@ const Profile = () => {
   });
 
   const { loading, data, error } = useQuery(QUERY_ME);
-
+  console.log('data: ', data);
   const user = data?.me;
-  console.log(user)
   if (error) console.log(error);
 
   if (loading) {

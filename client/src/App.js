@@ -19,6 +19,7 @@ import Build2 from './pages/Build2';
 import Build3 from './pages/Build3';
 import Build4 from './pages/Build4';
 import Template from './pages/Template';
+import Resume from './pages/Resume';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -77,6 +78,9 @@ function App() {
             </Route>
             <Route exact path="/me">
               <Profile />
+            </Route>
+            <Route exact path="/resume">
+              <Resume />
             </Route>
             <Route exact path="/users/:id">
               <Profile />
