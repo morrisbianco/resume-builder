@@ -27,18 +27,14 @@ const Template = () => {
 			<body>
 				<div id="doc2" className="yui-t7">
 					<div id="inner">
-
 						<div id="hd">
 							<div className="yui-gc">
 								<div className="yui-u first">
 									<h1>Jonathan Doe</h1>
-									<h2>Web Designer, Director</h2>
+									<h2>Github: /johnDoe | Linkedin: /john-doe </h2>
 								</div>
-
 								<div className="yui-u">
 									<div className="contact-info">
-
-
 										<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
 										<h3>(313)-867-5309</h3>
 										<h3>555 Fake Street, Fakeville</h3>
@@ -50,7 +46,7 @@ const Template = () => {
 							</div>
 						</div>
 						{/* <!--// .yui-gc --> */}
-					</div>
+					
 					{/* <!--// hd --> */}
 
 					<div id="bd">
@@ -93,20 +89,9 @@ const Template = () => {
 											<li className="last">Linux</li>
 										</ul>
 									</div>
-
-									<div className="talent">
-										<h2>Project Direction</h2>
-										<p>Proven ability to lead and manage a wide variety of design and development projects in team and
-											independent situations.</p>
-									</div>
 								</div>
 							</div>
 							{/* <!--// .yui-gf --> */}
-
-							<div className="yui-gf">
-								<div className="yui-u first">
-									<h2>Technical</h2>
-								</div>
 								{/* <!--// .yui-gf --> */}
 
 								<div className="yui-gf">
@@ -133,6 +118,8 @@ const Template = () => {
 											<p>ProjManager.com</p>
 										</div>
 									</div>
+								</div>
+								</div>
 								</div>
 
 								{/* <!--// .yui-gf--> */}
@@ -167,24 +154,12 @@ const Template = () => {
 										<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
 									</div>
 								</div>
-							</div>
-							<div className="yui-gf last">
-								<div className="yui-u first">
-									<h2>Education</h2>
-								</div>
-								<div className="yui-u">
-									<h2>Indiana University - Bloomington, Indiana</h2>
-									<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div id="ft">
 					<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313)-867-5309 &mdash; 555 Fake Street, Fakeville, NC 55555
 					</p>
 				</div>
-
+				</div>
+				</div>
 			</body>
 			{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
