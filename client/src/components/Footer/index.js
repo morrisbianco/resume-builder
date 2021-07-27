@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="container text-center mb-5">
           {location.pathname !== '/' && (
             <button
-              className="btn btn-dark mb-3"
+              className="button btnB mb-3"
               onClick={() => history.goBack()}
             >
               &larr; Go Back
@@ -22,6 +22,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      <button className="button" onClick={() => window.print()}>Print Test for page</button>
     </footer>
   );
 };

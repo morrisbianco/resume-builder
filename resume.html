@@ -154,7 +154,7 @@
 				<!--// footer -->
 
 			</div><!-- // inner -->
-
+			<button onclick="window.print().preventDefault()">Print this page</button>
 			<button>click</button>
 		</div>
 		<!--// doc -->
@@ -175,7 +175,7 @@
 	}
 
 	button.addEventListener("click", () => {
-		button.style.display = 'none';
+		button.style.display = 'visible';
 		createPDF();
 	});
 </script>
