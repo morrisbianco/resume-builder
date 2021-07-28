@@ -200,7 +200,7 @@ const Resume = () => {
             {/* <!-- // inner --> */}
 
           </div>
-          <a download='resume.jpeg' href='.' onClick={createPDF}>click</a>
+          <a download='resume.jpeg' href='.' onClick={createPDF}>click to download</a>
           {/* <!--// doc --> */}
         </main>
       </body>
