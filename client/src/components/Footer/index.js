@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <button className="button" onClick={() => window.print()}>Print Test for page</button>
+      {/* <button className="button" onClick={() => window.print()}>Print Test for page</button> */}
     </footer>
   );
 };

@@ -14,6 +14,10 @@
   margin-bottom: 40vh !important;
 }
 
+.aboutUsFull {
+  margin-bottom: 60vh !important;
+}
+
 input {
   max-width: 500px !important;
   background: rgba(0, 0, 0, 0.541) !important;
@@ -26,6 +30,24 @@ textarea {
   background: rgba(0, 0, 0, 0.541) !important;
   border: solid 1px rgb(94, 94, 94) !important;
   color: white !important;
+}
+
+.btnDownload {
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  border: solid rgb(0, 0, 0) 1px !important;
+  color: rgb(0, 0, 0) !important;
+  transition: 200ms;
+  width: 200px !important;
+  margin: 20px !important;
+}
+.btnDownload:hover {
+background-color: #3bb78f;
+  background-image: linear-gradient(100deg, #3bb78f 0%, #0bab64 74%);
+  border: solid rgb(0, 0, 0) 1px !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 10px;
+  transition: 200ms;
 }
 
 .btnG {

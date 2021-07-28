@@ -156,7 +156,7 @@ const Template = () => {
 						</div>
 					</div>
 				</div>
-				<a download='resume.jpeg' href='.' onClick={createPDF}>click to download</a>
+				<a download='resume.jpeg' href='.' className="btnDownload button" onClick={createPDF}>click to download</a>
 			</body>
 		</html>
 	);
