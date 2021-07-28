@@ -432,10 +432,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.li.is-active {
-  color: #be1818 !important;
-  text-decoration: underline;
-}
 
 /* HEIGHT / WIDTH UTILS */
 .w-100 {

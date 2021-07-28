@@ -36,8 +36,7 @@ const Resume = () => {
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" type="text/css"
-          href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+          href="" media="all" />
       </head>
 
       <body>
