@@ -36,7 +36,7 @@ const Resume = () => {
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" type="text/css"
-          href="" media="all" />
+					href="https://yui-s.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
       </head>
 
       <body>
@@ -83,7 +83,7 @@ const Resume = () => {
                         <li>{`${user.resume[0].skills}`}</li>
                         {/* <li className="last">Javascript</li>
                       </ul>
-
+// test
                       <ul className="talent">
                         <li>Jquery</li>
                         <li>PHP</li>
