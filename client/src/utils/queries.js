@@ -20,6 +20,11 @@ export const QUERY_ME = gql`
       }
       experience {
         company
+        role
+        date
+        location
+        description
+        keyAchievements
       }
       education {
         school
