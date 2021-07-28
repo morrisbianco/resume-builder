@@ -20,6 +20,7 @@ import Build3 from './pages/Build3';
 import Build4 from './pages/Build4';
 import Template from './pages/Template';
 import Resume from './pages/Resume';
+import About from './pages/About';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -80,6 +81,9 @@ function App() {
             </Route>
             <Route exact path="/users/:id">
               <Profile />
+            </Route>
+            <Route exact path="/about">
+              <About />
             </Route>
           </div>
           <Footer />

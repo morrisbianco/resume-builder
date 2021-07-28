@@ -23,7 +23,7 @@ const Profile = () => {
   if (!Auth.loggedIn()) {
     return (
       <div className="has-text-centered">
-        <h4 className="fullBuild4 title mt-6">
+        <h4 className="fullBuild4 title aboutUsFull mt-6">
           You need to be logged in to see this page. <br /> Use the navigation links above to
           sign up or log in!
         </h4>
