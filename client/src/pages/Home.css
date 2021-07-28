@@ -27,7 +27,6 @@ border-radius: 5px;
 .subtitle {
   color: rgb(255, 255, 255) !important;
   font-size: 1.2rem;
-  text-shadow: 2px 2px 2px #000 1px 1px 1px rgb(0 0 0);
 }
 
 .content-divider {

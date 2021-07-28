@@ -48,7 +48,7 @@ textarea {
 }
 
 .label {
-  color: white !important;
+  color: #eeeeee !important;
 }
 
 .container {
@@ -105,4 +105,10 @@ textarea {
   color: #3c9925 !important;
   cursor: default;
   pointer-events: none;
+}
+
+.is-link {
+  background-image: black !important ;
+  color: black !important;
+  background-color: black;
 }
