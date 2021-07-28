@@ -83,7 +83,7 @@ const Resume = () => {
                         <li>{`${user.resume[0].skills}`}</li>
                         {/* <li className="last">Javascript</li>
                       </ul>
-
+// test
                       <ul className="talent">
                         <li>Jquery</li>
                         <li>PHP</li>
