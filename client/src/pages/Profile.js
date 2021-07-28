@@ -22,12 +22,14 @@ const Profile = () => {
 
   if (!Auth.loggedIn()) {
     return (
-      <div className="has-text-centered">
+      
+      <div className="has-text-centered container">
+        <Link class="button btnSign" data-target="modal-image2" to="/signup">Sign Up</Link>
         <h4 className="fullBuild4 title aboutUsFull mt-6">
           You need to be logged in to see this page. <br /> Use the navigation links above to
           sign up or log in!
         </h4>
-      </div>
+          </div>
     );
   }
 
@@ -47,8 +49,7 @@ const Profile = () => {
               <div class="card-image">
                 <figure class="image is-4by3">
                   <Link to="/resume">
-
-                    <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2" />
+                    <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2"/>
                   </Link>
                 </figure>
               </div>
