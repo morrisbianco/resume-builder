@@ -3,9 +3,9 @@ import './Template.css';
 
 const Template = () => {
 
-	useEffect(() => {
-		document.title = `Rapid Résumé | Template`;
-	});
+  useEffect(() => {
+    document.title = `Rapid Résumé | Template`;
+  });
 
 	return (
 		<html className="hero">
@@ -91,23 +91,97 @@ const Template = () => {
 											<p>Efficiently design high-end web applications with this seamless integration. </p>
 											<p>WebpageDesigner.com</p>
 										</div>
+										{/* <!--// .yui-gf --> */}
 
-										<div className="talent">
-											<h2>App Interface Debugger</h2>
-											<p>Debug your app's interface like a professional with React-friendly debugging application. </p>
-											<p>AppIDebugger.com</p>
+                    <div className="yui-gf">
+											<div className="yui-u first">
+												<h2>Skills</h2>
+											</div>
+											<div className="yui-u">
+												<ul className="talent">
+													<li>XHTML</li>
+													<li>CSS</li>
+													<li className="last">Javascript</li>
+												</ul>
+
+												<ul className="talent">
+													<li>Jquery</li>
+													<li>PHP</li>
+													<li className="last">CVS / Subversion</li>
+												</ul>
+
+												<ul className="talent">
+													<li>OS X</li>
+													<li>Windows XP/Vista</li>
+													<li className="last">Linux</li>
+												</ul>
+											</div>
 										</div>
 
-										<div className="talent">
-											<h2>Project Manager</h2>
-											<p>A project manager built into your console that allows the user to manage multiple projects and teams. </p>
-											<p>ProjManager.com</p>
+										{/* <!--// .yui-gf --> */}
+
+                    <div className="yui-gf">
+											<div className="yui-u first">
+												<h2>Projects</h2>
+											</div>
+											<div className="yui-u">
+
+												<div className="talent">
+													<h2>Webpage Designer</h2>
+													<p>Efficiently design high-end web applications with this seamless integration. </p>
+                          <p>WebpageDesigner.com</p>
+												</div>
+
+												<div className="talent">
+													<h2>App Interface Debugger</h2>
+													<p>Debug your app's interface like a professional with React-friendly debugging application. </p>
+                          <p>AppIDebugger.com</p>
+												</div>
+
+												<div className="talent">
+													<h2>Project Manager</h2>
+													<p>A project manager built into your console that allows the user to manage multiple projects and teams. </p>
+                          <p>ProjManager.com</p>
+                        </div>
+											</div>
+										</div>
+								
+										{/* <!--// .yui-gf--> */}
+
+										<div className="yui-gf">
+
+											<div className="yui-u first">
+												<h2>Experience</h2>
+											</div>
+											{/* <!--// .yui-u --> */}
+											<div className="yui-u">
+												<div className="job last">
+													<h2>International Business Machines (IBM)</h2>
+                          <h2>Armonk, New York</h2>
+													<h3>Lead Web Designer</h3>
+													<h4>2001-2004</h4>
+													<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
+														long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
+														e-tailers with timely e-markets.</p>
+												</div>
+											</div>
+										</div>
+										<div className="yui-gf last">
+											<div className="yui-u first">
+												<h2>Education</h2>
+											</div>
+                      <div className="job last">
+                      <h4>1996-2000</h4>
+                      </div>
+											<div className="yui-u">
+												<h2>Indiana University - Bloomington, Indiana</h2>
+												<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
 						<div className="yui-gf">
 							<div className="yui-u first">
 								<h2>Experience</h2>

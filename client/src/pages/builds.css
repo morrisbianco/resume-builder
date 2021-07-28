@@ -34,6 +34,8 @@ textarea {
   border: solid rgb(0, 0, 0) 1px !important;
   color: rgb(0, 0, 0) !important;
   transition: 200ms;
+  width: 200px;
+  margin: 20px;
 }
 
 .btnG:hover {
@@ -80,7 +82,7 @@ textarea {
   background: rgba(0, 0, 0, 0.541);
   box-shadow: 10px 10px 10px var(--shadowDark), -1px -1px 1px var(--shadowLight);
   border-radius: 10px;
-  max-width: 500px !important;
+  max-width: 700px !important;
 }
 
 ::placeholder {
@@ -90,4 +92,17 @@ textarea {
 .margin1 {
   margin-top: 10vh !important;
   margin-bottom: 10vh !important;
+}
+
+.wrap {
+  border-top: rgb(124, 124, 124) 1px solid;
+  border-bottom: rgb(124, 124, 124) 1px solid;
+  padding: 30px;
+  font-size: larger;
+}
+
+.breadcrumb li.is-active a {
+  color: #3c9925 !important;
+  cursor: default;
+  pointer-events: none;
 }
