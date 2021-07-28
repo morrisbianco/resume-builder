@@ -42,9 +42,9 @@ const Signup = () => {
   };
 
   return (
-    <section class="hero is-fullheight">
-      <div class="hero-body has-text-centered">
-        <div class="login">
+    <section className="hero is-fullheight">
+      <div className="hero-body has-text-centered">
+        <div className="login">
           <h1 className="title">Sign Up</h1>
           {data ? (
             <p>
@@ -53,35 +53,35 @@ const Signup = () => {
             </p>
           ) : (
             <form onSubmit={handleFormSubmit}>
-              <div class="field">
-                <div class="control">
-                  <input class="input inputLoginSign is-medium is-rounded" type="text" name="username" onChange={handleChange} value={formState.username} placeholder="username" autocomplete="username" required />
+              <div className="field">
+                <div className="control">
+                  <input className="input inputLoginSign is-medium is-rounded" type="text" name="username" onChange={handleChange} value={formState.username} placeholder="username" autocomplete="username" required />
                 </div>
               </div>
-              <div class="field">
-                <div class="control">
-                  <input class="input inputLoginSign is-medium is-rounded" type="email" name="email" onChange={handleChange} value={formState.email} placeholder="hello@example.com" autocomplete="username" required />
+              <div className="field">
+                <div className="control">
+                  <input className="input inputLoginSign is-medium is-rounded" type="email" name="email" onChange={handleChange} value={formState.email} placeholder="hello@example.com" autocomplete="username" required />
                 </div>
               </div>
-              <div class="field">
-                <div class="control">
-                  <input class="input inputLoginSign is-medium is-rounded" type="password" name="password" onChange={handleChange} value={formState.password} placeholder="**********" autocomplete="current-password" required />
+              <div className="field">
+                <div className="control">
+                  <input className="input inputLoginSign is-medium is-rounded" type="password" name="password" onChange={handleChange} value={formState.password} placeholder="**********" autocomplete="current-password" required />
                 </div>
               </div>
               <br />
-              <button class="button is-block is-fullwidth btnSign  is-medium is-rounded" type="submit">
+              <button className="button is-block is-fullwidth btnSign  is-medium is-rounded" type="submit">
                 Sign Up
               </button>
             </form>
           )}
           {error && (
-            <div classNameName="my-3 p-3 bg-danger text-white">
+            <div className="my-3 p-3 bg-danger text-white">
               {error.message}
             </div>
           )}
           <br />
-          <div class="level">
-            <div class="level-item has-text-centered">
+          <div className="level">
+            <div className="level-item has-text-centered">
               <div>
                 <Link to="/login" >Already have an account?</Link>
               </div>
