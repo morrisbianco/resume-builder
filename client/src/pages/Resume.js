@@ -2,10 +2,21 @@ import React, { useEffect } from 'react';
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-
+import html2canvas from 'html2canvas';
 import './Template.css'
 
 const Resume = () => {
+
+  function createPDF(e) {
+    const tempHTML = document.querySelector('#inner');
+    const bounds = tempHTML.getBoundingClientRect();
+    window.scrollTo(0, bounds.y);
+    html2canvas(tempHTML).then(canvas => {
+      console.log(canvas);
+      const image = canvas.toDataURL('image/jpeg');
+      e.target.href = image;
+    });
+  }
 
   useEffect(() => {
     document.title = `Rapid Résumé | Resume`;
@@ -36,11 +47,11 @@ const Resume = () => {
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" type="text/css"
-					href="https://yui-s.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
+          href="https://yui-s.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
       </head>
 
       <body>
-        <div id="doc2" className="yui-t7 animate__rollIn animate__animated margin1 contain2 full hero">
+        <div id="doc2" className="yui-t7 margin1 contain2 full hero">
           <div id="inner">
             <div id="hd">
               <div className="yui-gc">
@@ -162,6 +173,7 @@ const Resume = () => {
             </div>
           </div>
         </div>
+        <a download='resume.jpeg' href='.' onClick={createPDF}>click to download</a>
       </body>
     </html>
   );
