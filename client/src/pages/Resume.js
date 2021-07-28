@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import html2canvas from 'html2canvas';
@@ -37,6 +38,15 @@ const Resume = () => {
         </h4>
       </div>
     );
+  }
+
+  if (!user) {
+    return (
+      <div>
+        <h1> Oops! Looks like something went wrong. </h1>
+        <Link to='/'>Return to Home</Link>
+      </div>
+    )
   }
 
   return (
