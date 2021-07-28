@@ -66,7 +66,6 @@ const Build = () => {
             <li><Link onClick={handleSubmit} to="/build4" class="link is-info">Projects</Link></li>
           </ul>
         </nav>
-        <p className="subtitle is-black">progress bar</p>
         <progress class="progress is-link" value="16" max="100">30%</progress>
       </div>
       <div className="columns is-multiline">
@@ -150,7 +149,6 @@ const Build = () => {
             </div>
           </div>
         </div>
-
       </div>
       <div className="has-text-center">
         <Link className="button btnG " onClick={handleSubmit} to="/Build2">
