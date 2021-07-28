@@ -1,9 +1,10 @@
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import { ADD_PROJECT } from '../utils/mutations';
+
 import './builds.css';
+
 const Build4 = () => {
   const [form, setForm] = useState({});
   const [addProject, { error }] = useMutation(ADD_PROJECT);
@@ -20,19 +21,6 @@ const Build4 = () => {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-
-    // if (!form.name || !validateEmail(form.email)) {
-    //   setErrorMessage('Email or username is invalid');
-    //   return;
-    // }
-    // if (!form.summary || !checkIfValid(form.summary)) {
-    //   setErrorMessage(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-    alert(`success`);
     console.log('form: ', form);
     try {
       const { data } = await addProject({
@@ -47,17 +35,27 @@ const Build4 = () => {
 
 
   return (
-    <div class="container">
+    <div className="container margin1 contain has-text-centered animate__fadeIn animate__animated">
       <div>
         {errorMessage && (
           <div>
             <p className="subtitle pt-5 mx-5 px-5">{errorMessage}</p>
           </div>
         )}
+        <h1 className="title">Projects</h1>
+        <div className="wrap column">
+          <nav class="breadcrumb has-arrow-separator has-text-centered is-centered is-medium" aria-label="breadcrumbs">
+            <ul>
+              <li><Link onClick={handleSubmit} to="/build" class="link is-info">User Information</Link></li>
+              <li><Link onClick={handleSubmit} to="/build2" class="link is-info">Education</Link></li>
+              <li><Link onClick={handleSubmit} to="/build3" class="link is-info">Experience</Link></li>
+              <li class="is-active"><Link onClick={handleSubmit} to="/build4" class="link is-info">Projects</Link></li>
+            </ul>
+          </nav>
+          <progress class="progress is-link" value="95" max="100">30%</progress>
+        </div>
         <form className="form fullBuild4">
-
-          <div className="field pt-5 mx-5 px-5">
-            <h3>Projects</h3>
+          <div className="field px-5">
             <label className="label">Title</label>
             <div className="control">
               <input className="input" type="text" name="title" value={form.title} onChange={handleInputChange} placeholder="Project Title" />
@@ -76,7 +74,7 @@ const Build4 = () => {
             </div>
           </div>
           <div className="has-text-center">
-            <Link className="button btnG p-5 m-5 px-5" onClick={handleSubmit} to="/me">
+            <Link className="button btnG " onClick={handleSubmit} to="/me">
               Submit
             </Link>
           </div>

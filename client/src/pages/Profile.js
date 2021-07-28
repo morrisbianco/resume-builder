@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
 import './profile.css'
 
 const Profile = () => {
@@ -15,19 +13,17 @@ const Profile = () => {
   });
 
   const { loading, data, error } = useQuery(QUERY_ME);
-
   const user = data?.me;
-  console.log(user)
   if (error) console.log(error);
 
   if (loading) {
-    return <h4>Loading...</h4>;
+    return <h4 className="fullBuild4">Loading...</h4>;
   }
 
   if (!Auth.loggedIn()) {
     return (
       <div className="has-text-centered">
-        <h4 className="fullprofile title mt-6">
+        <h4 className="fullBuild4 title mt-6">
           You need to be logged in to see this page. <br /> Use the navigation links above to
           sign up or log in!
         </h4>
@@ -37,32 +33,29 @@ const Profile = () => {
 
   return (
     <div>
-      <div className=" has-text-centered">
-        <h2 className="title">
-          Viewing {`${user.username}'s`} Resumes.
-        </h2>
-      </div>
-      <div className="container margin1 has-text-centered">
-        <div class="columns is-multiline features">
+      <div className="container profile margin1 has-text-centered animate__slideInUp animate__animated">
+        <div>
+          <h2 className="title">
+            Viewing {`${user.username}'s`} Resumes.
+          </h2>
+        </div>
+        <div className="columns is-multiline features">
           {/* resume start */}
+
           <div class="column is-4 is-auto">
             <div class="card is-shady">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <a href="#">
+                  <Link to="/resume">
+
                     <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2" />
-                  </a>
+                  </Link>
                 </figure>
               </div>
               <div class="card-content">
                 <div class="content">
-                  <h4>user.resumeName</h4>
-                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <span class="button is-link modal-button" data-target="modal-image2">
-                    <Link to="/Resume">
-                      View resume
-                    </Link>
-                  </span>
+                  <h4>My Resume</h4>
+                  <Link class="button btnSign" data-target="modal-image2" to="/resume">View resume</Link>
                 </div>
               </div>
             </div>

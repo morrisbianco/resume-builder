@@ -423,14 +423,15 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #2d54c0 !important;
   text-decoration: underline;
 }
+
 
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
