@@ -1,8 +1,6 @@
-// Node Modules
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-// Utilities
 import Auth from '../utils/auth';
 
 const Home = () => {
@@ -12,7 +10,6 @@ const Home = () => {
   });
 
   const renderControls = () => {
-    // If logged in show logout controls
     if (Auth.loggedIn()) {
       return (
         <>
@@ -21,7 +18,6 @@ const Home = () => {
       );
     }
 
-    // If logged out show login controls
     return (
       <>
         <Link className="button btnLogin" to="/login">
@@ -33,7 +29,6 @@ const Home = () => {
 
   return (
     <>
-
       <section id="parallax-1" className="hero is-large">
         <div className="hero-body">
           <div>

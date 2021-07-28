@@ -1,9 +1,10 @@
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { checkIfValid, validateEmail } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import { ADD_EXP } from '../utils/mutations';
+
 import './builds.css';
+
 const Build3 = () => {
   const [form, setForm] = useState({});
   const [addExp, { error }] = useMutation(ADD_EXP);
@@ -21,20 +22,6 @@ const Build3 = () => {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-
-    // if (!form.name || !validateEmail(form.email)) {
-    //   setErrorMessage('Email or username is invalid');
-    //   return;
-    // }
-    // if (!form.summary || !checkIfValid(form.summary)) {
-    //   setErrorMessage(
-    //     `Please include a message`
-    //   );
-    //   return;
-    // }
-    alert(`success`);
-
     try {
       console.log(form);
       const { data } = await addExp({
@@ -49,7 +36,8 @@ const Build3 = () => {
 
 
   return (
-    <div class="container contain margin1 has-text-centered animate__fadeIn animate__animated">
+
+    <div className="container contain margin1 has-text-centered animate__fadeIn animate__animated">
       <div>
         {errorMessage && (
           <div>

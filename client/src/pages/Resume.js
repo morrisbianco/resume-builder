@@ -1,28 +1,13 @@
 import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
-import './profile.css'
+import './Template.css'
 
 const Resume = () => {
 
   useEffect(() => {
-    document.title = `Rapid Résumé | Profile`;
+    document.title = `Rapid Résumé | Resume`;
   });
-
-  const { loading, data, error } = useQuery(QUERY_ME);
-
-  const user = data?.me;
-  console.log(user)
-  if (error) console.log(error);
-
-  if (loading) {
-    return <h4>Loading...</h4>;
-  }
 
   if (!Auth.loggedIn()) {
     return (
@@ -36,49 +21,40 @@ const Resume = () => {
   }
 
   return (
-    <html>
-
+    <html className="hero">
       <head>
-
         <title>Jonathan Doe | Web Designer, Director | name@yourdomain.com</title>
         <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-
         <link rel="stylesheet" type="text/css"
           href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
-
       </head>
 
       <body>
-        <div id="doc2" className="yui-t7">
+        <div id="doc2" className="yui-t7 animate__rollIn animate__animated margin1 contain2 full hero">
           <div id="inner">
-
             <div id="hd">
               <div className="yui-gc">
                 <div className="yui-u first">
                   <h1>Jonathan Doe</h1>
-                  <h2>Web Designer, Director</h2>
+                  <h2>Github: /johnDoe | Linkedin: /john-doe </h2>
                 </div>
 
                 <div className="yui-u">
                   <div className="contact-info">
-
                     <h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
-                    <h3>(313) - 867-5309</h3>
+                    <h3>(313)-867-5309</h3>
+                    <h3>555 Fake Street, Fakeville</h3>
+                    <h3>NC, 55555</h3>
                   </div>
-                  {/* <!--// .contact-info --> */}
                 </div>
               </div>
-              {/* <!--// .yui-gc --> */}
             </div>
-            {/* <!--// hd --> */}
 
             <div id="bd">
               <div id="yui-main">
                 <div className="yui-b">
-
                   <div className="yui-gf">
                     <div className="yui-u first">
                       <h2>Profile</h2>
@@ -90,36 +66,10 @@ const Resume = () => {
                       </p>
                     </div>
                   </div>
-                  {/* <!--// .yui-gf --> */}
 
                   <div className="yui-gf">
                     <div className="yui-u first">
                       <h2>Skills</h2>
-                    </div>
-                    <div className="yui-u">
-
-                      <div className="talent">
-                        <h2>Web Design</h2>
-                        <p>Assertively exploit wireless initiatives rather than synergistic core competencies. </p>
-                      </div>
-
-                      <div className="talent">
-                        <h2>Interface Design</h2>
-                        <p>Credibly streamline mission-critical value with multifunctional functionalities. </p>
-                      </div>
-
-                      <div className="talent">
-                        <h2>Project Direction</h2>
-                        <p>Proven ability to lead and manage a wide variety of design and development projects in team and
-                          independent situations.</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* <!--// .yui-gf --> */}
-
-                  <div className="yui-gf">
-                    <div className="yui-u first">
-                      <h2>Technical</h2>
                     </div>
                     <div className="yui-u">
                       <ul className="talent">
@@ -141,71 +91,71 @@ const Resume = () => {
                       </ul>
                     </div>
                   </div>
-                  {/* <!--// .yui-gf--> */}
+                </div>
 
-                  <div className="yui-gf">
-
-                    <div className="yui-u first">
-                      <h2>Experience</h2>
-                    </div>
-                    {/* <!--// .yui-u --> */}
-                    <div className="yui-u">
-                      <div className="job last">
-                        <h2>International Business Machines (IBM)</h2>
-                        <h3>Lead Web Designer</h3>
-                        <h4>2001-2004</h4>
-                        <p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
-                          long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
-                          e-tailers with timely e-markets.</p>
-                      </div>
-                    </div>
+                <div className="yui-gf">
+                  <div className="yui-u first">
+                    <h2>Projects</h2>
                   </div>
-                  <div className="yui-gf last">
-                    <div className="yui-u first">
-                      <h2>Education</h2>
+                  <div className="yui-u">
+
+                    <div className="talent">
+                      <h2>Webpage Designer</h2>
+                      <p>Efficiently design high-end web applications with this seamless integration. </p>
+                      <p>WebpageDesigner.com</p>
                     </div>
-                    <div className="yui-u">
-                      <h2>Indiana University - Bloomington, Indiana</h2>
-                      <h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
+
+                    <div className="talent">
+                      <h2>App Interface Debugger</h2>
+                      <p>Debug your app's interface like a professional with React-friendly debugging application. </p>
+                      <p>AppIDebugger.com</p>
+                    </div>
+
+                    <div className="talent">
+                      <h2>Project Manager</h2>
+                      <p>A project manager built into your console that allows the user to manage multiple projects and teams. </p>
+                      <p>ProjManager.com</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
+            <div className="yui-gf">
+              <div className="yui-u first">
+                <h2>Experience</h2>
+              </div>
+              <div className="yui-u">
+                <div className="job last">
+                  <h2>International Business Machines (IBM)</h2>
+                  <h2>Armonk, New York</h2>
+                  <h3>Lead Web Designer</h3>
+                  <h4>2001-2004</h4>
+                  <p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow
+                    long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent
+                    e-tailers with timely e-markets.</p>
+                </div>
+              </div>
+            </div>
+            <div className="yui-gf last">
+              <div className="yui-u first">
+                <h2>Education</h2>
+              </div>
+              <div className="job last">
+                <h4>1996-2000</h4>
+              </div>
+              <div className="yui-u">
+                <h2>Indiana University - Bloomington, Indiana</h2>
+                <h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
+              </div>
+            </div>
             <div id="ft">
-              <p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313) - 867-5309
+              <p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313)-867-5309 &mdash; 555 Fake Street, Fakeville, NC 55555
               </p>
             </div>
-            {/* <!--// footer --> */}
-
           </div>
-          {/* <!-- // inner --> */}
-
         </div>
-        {/* <!--// doc --> */}
-
-
       </body>
-      {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-<script>
-	const main = document.querySelector("main");
-	const button = document.querySelector("button");
-
-	function createPDF() {
-		var pdf = new jsPDF('p', 'pt', 'a4');
-		pdf.addHTML(main, function () {
-			pdf.save('web.pdf');
-		});
-	}
-
-	button.addEventListener("click", () => {
-		button.style.display = 'none';
-		createPDF();
-	});
-</script> */}
-
     </html>
   );
 };
