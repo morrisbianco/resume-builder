@@ -13,7 +13,6 @@ const Profile = () => {
   });
 
   const { loading, data, error } = useQuery(QUERY_ME);
-  console.log('data: ', data);
   const user = data?.me;
   if (error) console.log(error);
 
@@ -46,15 +45,15 @@ const Profile = () => {
             <div class="card is-shady">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <a href="#">
+                  <Link to="/resume">
                     <img src="https://www.docdroid.net/file/view/xGmN9P7/copy-of-copy-of-john-doe-resume-2-pdf.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2" />
-                  </a>
+                  </Link>
                 </figure>
               </div>
               <div class="card-content">
                 <div class="content">
-                  <h4>user.resumeName</h4>
-                  <span class="button btnSign" data-target="modal-image2">View resume</span>
+                  <h4>My Resume</h4>
+                  <Link class="button btnSign" data-target="modal-image2" to="/resume">View resume</Link>
                 </div>
               </div>
             </div>
