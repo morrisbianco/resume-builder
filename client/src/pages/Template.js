@@ -1,7 +1,19 @@
 import React, { useEffect } from 'react';
 import './Template.css';
+import html2canvas from 'html2canvas';
 
 const Template = () => {
+
+	function createPDF(e) {
+		const tempHTML = document.querySelector('#inner');
+		const bounds = tempHTML.getBoundingClientRect();
+		window.scrollTo(0, bounds.y);
+		html2canvas(tempHTML).then(canvas => {
+			console.log(canvas);
+			const image = canvas.toDataURL('image/jpeg');
+			e.target.href = image;
+		});
+	}
 
 	useEffect(() => {
 		document.title = `Rapid Résumé | Template`;
@@ -19,7 +31,7 @@ const Template = () => {
 			</head>
 
 			<body>
-				<div id="doc2" className="yui-t7 animate__rollIn animate__animated margin1 contain2 full hero">
+				<div id="doc2" className="yui-t7 margin1 contain2 full hero">
 					<div id="inner">
 						<div id="hd">
 							<div className="yui-gc">
@@ -144,6 +156,7 @@ const Template = () => {
 						</div>
 					</div>
 				</div>
+				<a download='resume.jpeg' href='.' onClick={createPDF}>click to download</a>
 			</body>
 		</html>
 	);
