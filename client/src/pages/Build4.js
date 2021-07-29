@@ -74,6 +74,9 @@ const Build4 = () => {
             </div>
           </div>
           <div className="has-text-center">
+            <button className="button btnG " onClick={handleSubmit} to="/me">
+              Add Another
+            </button>
             <Link className="button btnG " onClick={handleSubmit} to="/me">
               Submit
             </Link>

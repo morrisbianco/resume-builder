@@ -72,6 +72,9 @@ const Build2 = () => {
             <input className="input" type="text" name="description" value={form.description} onChange={handleInputChange} placeholder="Describe..." />
           </div>
           <div className="has-text-center">
+            <button className="button btnG " onClick={handleSubmit} to="/me">
+              Add Another
+            </button>
             <Link className="button btnG " onClick={handleSubmit} to="/Build3">
               Next
             </Link>
