@@ -6,6 +6,10 @@ import { QUERY_ME } from '../utils/queries';
 import html2canvas from 'html2canvas';
 import './Template.css'
 
+import EducationList from '../components/EducationList';
+import ExperienceList from '../components/ExperienceList';
+import ProjectList from '../components/ProjectList';
+
 const Resume = () => {
 
   function createPDF(e) {
@@ -28,11 +32,32 @@ const Resume = () => {
   if (error) console.log(error);
   console.log(user);
 
+  const renderEducationList = () => {
+    if (loading) {
+      return <h2>Loading...</h2>
+    } else {
+      return <EducationList user={user} title="List of Users" />
+    }
+  }
+  const renderExperienceList = () => {
+    if (loading) {
+      return <h2>Loading...</h2>
+    } else {
+      return <ExperienceList user={user} title="List of Users" />
+    }
+  }
+  const renderProjectList = () => {
+    if (loading) {
+      return <h2>Loading...</h2>
+    } else {
+      return <ProjectList user={user} title="List of Users" />
+    }
+  }
 
   if (!Auth.loggedIn()) {
     return (
       <div className="has-text-centered">
-        <h4 className="fullprofile title mt-6">
+        <h4 className="fullprofile title mt-0">
           You need to be logged in to see this page. <br /> Use the navigation links above to
           sign up or log in!
         </h4>
@@ -102,19 +127,6 @@ const Resume = () => {
                     <div className="yui-u">
                       <ul className="talent">
                         <li>{`${user.resume[0].skills}`}</li>
-                        {/* <li className="last">Javascript</li>
-                      </ul>
-// test
-                      <ul className="talent">
-                        <li>Jquery</li>
-                        <li>PHP</li>
-                        <li className="last">CVS / Subversion</li>
-                      </ul>
-
-                      <ul className="talent">
-                        <li>OS X</li>
-                        <li>Windows XP/Vista</li>
-                        <li className="last">Linux</li> */}
                       </ul>
                     </div>
                   </div>
@@ -125,55 +137,23 @@ const Resume = () => {
                     <h2>Projects</h2>
                   </div>
                   <div className="yui-u">
-
-                    <div className="talent">
-                      <h2>{`${user.project[0].title}`}</h2>
-                      <p>{`${user.project[0].points}`}</p>
-                      <p>{`${user.project[0].tools}`}</p>
-                      <p>{`${user.project[0].link}`}</p>
-                    </div>
-
-                    {/* <div className="talent">
-                      <h2>App Interface Debugger</h2>
-                      <p>Debug your app's interface like a professional with React-friendly debugging application. </p>
-                      <p>AppIDebugger.com</p>
-                    </div>
-
-                    <div className="talent">
-                      <h2>Project Manager</h2>
-                      <p>A project manager built into your console that allows the user to manage multiple projects and teams. </p>
-                      <p>ProjManager.com</p>
-                    </div> */}
+                    {renderProjectList()}
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="yui-gf">
               <div className="yui-u first">
                 <h2>Experience</h2>
               </div>
-              <div className="yui-u">
-                <div className="job last">
-                  <h2>{`${user.experience[0].company}`}</h2>
-                  <h2>{`${user.experience[0].location}`}</h2>
-                  <h3>{`${user.experience[0].role}`}</h3>
-                  <h4>{`${user.experience[0].date}`}</h4>
-                  <p>{`${user.experience[0].description}`}</p>
-                  <p>{`${user.experience[0].keyAchievements}`}</p>
-                </div>
-              </div>
+              {renderExperienceList()}
             </div>
             <div className="yui-gf last">
-              <div className="yui-u first">
-                <h2>Education</h2>
-              </div>
-              <div className="job last">
-                <h4>{`${user.education[0].date}`}</h4>
-              </div>
-              <div className="yui-u">
-                <h2>{`${user.education[0].school}`} - {`${user.education[0].location}`}</h2>
-                <h3>{`${user.education[0].description}`} </h3>
+              <div>
+                <div className="yui-u first">
+                  <h2>Education</h2>
+                </div>
+                {renderEducationList()}
               </div>
             </div>
             <div id="ft">
